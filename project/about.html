@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Social Santa</title>
+  <meta name="description"
+    content="A digital studio from Belagavi and Mumbai built to move brands forward. Meet the founders and team.">
+  <meta property="og:title" content="About Social Santa">
+  <meta property="og:description" content="Strategy, identity and growth under one roof.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="icon" href="" type="image/x-icon">
+  <style>
+    /* ===== ABOUT PAGE: dark hero with outline shape + balanced About the studio ===== */
+    body[data-page="about"] .site-header {
+      margin-bottom: -5.25rem;
+    }
+
+    .ab-hero {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: 7.5rem 0 3.5rem;
+      background: #ffffff;
+      color: #000000;
+      isolation: isolate;
+    }
+
+    .ab-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1.5rem
+    }
+
+    .ab-dot {
+      display: block;
+      width: clamp(3.25rem, 6vw, 5.25rem);
+      aspect-ratio: 1;
+      margin: 0 0 1.75rem clamp(.5rem, 9vw, 7rem);
+      border-radius: 50%;
+      background: var(--accent)
+    }
+
+    .ab-h1 {
+      font-size: clamp(2.9rem, 8.6vw, 8rem);
+      line-height: .98;
+      font-weight: 800;
+      letter-spacing: -.055em
+    }
+
+    .ab-line {
+      display: block;
+      padding-bottom: .06em
+    }
+
+    .ab-line-1 {
+      margin-left: clamp(0rem, 10vw, 8rem)
+    }
+
+    .ab-ring {
+      position: relative;
+      display: inline-block;
+      padding: .04em .26em;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -.02em
+    }
+
+    .ab-ring::after {
+      content: "";
+      position: absolute;
+      inset: -.02em -.04em;
+      border: .035em solid var(--accent);
+      border-radius: 50%;
+      transform: rotate(-2.5deg);
+      pointer-events: none
+    }
+
+    .ab-tag {
+      margin-top: 2.25rem;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    .ab-art {
+      position: absolute;
+      z-index: 1;
+      right: clamp(-2rem, 7vw, 8rem);
+      top: 54%;
+      height: min(82%, 46rem);
+      aspect-ratio: 155 / 312;
+      transform: translateY(-50%) rotate(-7deg);
+      opacity: .9;
+      background: url(assets/images/ss-shape.webp) center / contain no-repeat
+    }
+
+    @media (max-width: 760px) {
+      .ab-art {
+        height: 58%;
+        right: -1rem;
+        opacity: .4
+      }
+
+      .ab-hero {
+        padding-top: 6.5rem
+      }
+    }
+
+    /* header turns light while it sits over the dark hero */
+    .site-header.over-dark .logo {
+      color: #fff
+    }
+
+    .site-header.over-dark .logo .text-primary {
+      color: var(--accent)
+    }
+
+    .site-header.over-dark .menu-btn {
+      border-color: rgba(255, 255, 255, .7)
+    }
+
+    .site-header.over-dark .menu-icon i {
+      background: #fff
+    }
+
+    @media (min-width: 64rem) {
+      .site-header.over-dark .nav-link {
+        color: #fff
+      }
+
+      .site-header.over-dark .nav-link[aria-current="page"],
+      .site-header.over-dark .nav-link.active {
+        color: var(--accent)
+      }
+
+      .site-header.over-dark .header-cta,
+      .site-header.over-dark .nav-cta {
+        background: #fff;
+        color: var(--ink)
+      }
+    }
+
+    /* About the studio: heading | text, then three equal cards, then a two-sided footer line */
+    .ab-about {
+      padding: 5.5rem 0 3rem
+    }
+
+    .ab-wrap {
+      max-width: 80rem;
+      margin-inline: auto;
+      padding-inline: 1.5rem
+    }
+
+    .ab-top {
+      display: grid;
+      gap: 2.5rem;
+      align-items: start
+    }
+
+    .ab-h2 {
+      margin-top: 1rem;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      line-height: .95;
+      font-weight: 800;
+      letter-spacing: -.055em
+    }
+
+    .ab-h2 .font-serif-italic {
+      color: var(--primary)
+    }
+
+    .ab-copy p {
+      max-width: 36rem;
+      color: var(--muted-foreground);
+      font-size: 1.05rem;
+      line-height: 1.8
+    }
+
+    .ab-copy p+p {
+      margin-top: 1rem
+    }
+
+    .ab-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 1.75rem;
+      font-weight: 700;
+      border-bottom: 2px solid currentColor;
+      padding-bottom: .15rem;
+      transition: color .2s
+    }
+
+    .ab-link:hover {
+      color: var(--primary)
+    }
+
+    .ab-pillars {
+      display: grid;
+      gap: 1rem;
+      margin-top: 3.5rem
+    }
+
+    .ab-card {
+      height: 100%;
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      background: var(--secondary)
+    }
+
+    .ab-card .n {
+      color: var(--primary);
+      font-size: 1.4rem
+    }
+
+    .ab-card h3 {
+      margin-top: 2.5rem;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -.03em
+    }
+
+    .ab-card p {
+      margin-top: .6rem;
+      color: var(--muted-foreground);
+      line-height: 1.7
+    }
+
+    .ab-foot {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .75rem 2rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted-foreground);
+      font-size: .95rem
+    }
+
+    .ab-foot b {
+      margin-right: .6rem;
+      color: var(--foreground);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    @media (min-width: 48rem) {
+      .ab-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem
+      }
+
+      .ab-pillars {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem
+      }
+    }
+
+    .site-header.over-dark .logo,
+    .site-header.over-dark .nav-link {
+      color: #000 !important;
+    }
+
+    .site-header.over-dark .logo .text-primary {
+      color: var(--accent) !important;
+    }
+
+    .site-header.over-dark .header-cta,
+    .site-header.over-dark .nav-cta {
+      background: #000 !important;
+      color: #fff !important;
+    }
+
+    .site-header.over-dark .menu-icon i {
+      background: #000 !important;
+    }
+  </style>
+</head>
+
+<body data-page="about">
+  <div class="shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">social<span class="text-primary">santa.</span></a>
+        <div class="header-actions">
+          <a href="contact.html" class="header-cta">Start a project →</a>
+          <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+            aria-controls="nav-menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button>
+        </div>
+        <nav class="nav-menu" id="nav-menu" aria-label="Main menu">
+          <ul class="nav-menu-list">
+            <li class="nav-item" style="--i:0">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item" style="--i:2"><a href="work.html" class="nav-link">Work</a></li>
+
+            <li class="nav-item has-sub" style="--i:1"><a href="services.html" class="nav-link">Services</a><button
+                type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="nav-sub"
+                aria-label="Show services"><span aria-hidden="true"></span></button>
+              <!-- <div class="nav-sub" id="nav-sub">
+                <ul>
+                  <li><a href="brand-strategy.html">Brand strategy</a></li>
+                  <li><a href="identity-design.html">Identity &amp; design</a></li>
+                  <li><a href="website-development.html">Website &amp; product</a></li>
+                  <li><a href="performance-marketing.html">Performance marketing</a></li>
+                  <li><a href="film-photography.html">Film &amp; photography</a></li>
+                  <li><a href="market research-consultations.html">Market Research &amp;
+                      consultations</a></li>
+                  <li><a href="influencer-marketing.html">Influencer marketing</a></li>
+                  <li><a href="offline-marketing.html">Offline marketing</a></li>
+                </ul>
+              </div> -->
+            </li>
+            <li class="nav-item" style="--i:0"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item" style="--i:3"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <a href="contact.html" class="nav-cta nav-item" style="--i:4">Start a project →</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="ab-hero" aria-labelledby="ab-h1">
+        <div class="ab-art" aria-hidden="true"></div>
+        <div class="ab-hero-inner">
+          <!-- <span class="ab-dot enter enter-700 from-bottom-4" aria-hidden="true"></span> -->
+          <h1 id="ab-h1" class="ab-h1 enter enter-700 from-bottom-6">
+            <span class="ab-line ab-line-1">We build brands</span>
+            <span class="ab-line">people <span class="ab-ring">choose.</span></span>
+          </h1>
+          <!-- <p class="ab-tag enter enter-1000 from-bottom-8">About the studio <span aria-hidden="true">→</span></p> -->
+        </div>
+      </section>
+
+      <section class="ab-about" aria-labelledby="ab-about-h">
+        <div class="ab-wrap">
+          <div class="ab-top">
+            <div class="reveal">
+              <p class="eyebrow">About the studio</p>
+              <h2 id="ab-about-h" class="ab-h2">Who are <span class="font-serif-italic">we.</span></h2>
+            </div>
+            <div class="ab-copy reveal" data-delay="120">
+              <p>Social Santa is a premier creative &amp; strategy agency founded by Vaishnavi Agrawal, a seasoned
+                strategist &amp; creative
+                lead. With deep expertise in retail &amp; hospitality, visual styling, &amp; brand strategy, Vaishnavi
+                brings essential market
+                insights to help founders and growing businesses achieve their full potential. Our mission is to empower
+                mid &amp;
+                growth-stage brands with hyper-targeted marketing &amp; captivating design, driving sustainable growth
+                &amp; long-term
+                commercial success.</p>
+              <!-- <p>Our mission is to empower mid and growth-stage brands with hyper-targeted marketing and captivating
+                design, driving sustainable growth and long-term commercial success.</p>
+              <a href="#founders" class="ab-link">Meet the founders <span aria-hidden="true">↓</span></a> -->
+            </div>
+          </div>
+          <!-- <div class="ab-pillars">
+            <div class="ab-card reveal"><span class="n font-serif-italic">01</span>
+              <h3>Strategy</h3>
+              <p>Positioning, architecture, and messaging that holds under pressure.</p>
+            </div>
+            <div class="ab-card reveal" data-delay="80"><span class="n font-serif-italic">02</span>
+              <h3>Creative</h3>
+              <p>Logo systems, packaging, and visual language built to last.</p>
+            </div>
+            <div class="ab-card reveal" data-delay="160"><span class="n font-serif-italic">03</span>
+              <h3>Performance</h3>
+              <p>Google Ads, Meta Ads, and SEO tuned for conversion, not vanity metrics.</p>
+            </div>
+          </div>
+          <div class="ab-foot reveal">
+            <p><b>Studios</b> Belagavi &amp; Mumbai</p>
+            <p><b>One studio</b> Strategy, creative and performance, together</p>
+          </div>
+        </div> -->
+      </section>
+
+      <section class="section py16" id="founders">
+        <div class="reveal">
+          <p class="eyebrow">About the founders</p>
+          <h2 class="h2 mt3">The people who <span class="font-serif-italic">started it all.</span></h2>
+          <p class="lead-muted">Three leaders. One shared belief — that brands grow when ideas meet discipline.</p>
+        </div>
+        <div class="grid-gap6 md3 mt14">
+          <div class="reveal">
+            <div class="founder">
+              <div class="founder-photo"><span class="initials" aria-hidden="true">VA</span><img
+                  src="assets/images/vaishnavimam.webp" alt="Vaishnavi Agarwal" loading="lazy" onerror="this.remove()">
+              </div>
+              <h3>Vaishnavi Agarwal</h3>
+              <p class="role font-serif-italic">Founder &amp; Managing Partner</p>
+              <p class="bio">Hi, I'm Vaishnavi. My journey in brand-building began with experience in visual
+                merchandising, styling, and e-commerce
+                while building my own D2C clothing brand, Navieo. My time at OSL Global Logistics further strengthened
+                my understanding
+                of business operations and commercial strategy.
+
+                These experiences led me to found Social Santa, bringing creativity and strategy together to build
+                compelling brand
+                identities, meaningful connections, and measurable business growth.
+
+              </p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="120">
+            <div class="founder">
+              <div class="founder-photo"><span class="initials" aria-hidden="true">IS</span><img
+                  src="assets/images/irshadsir.webp" alt="Irshad Soudagar" loading="lazy" onerror="this.remove()">
+              </div>
+              <h3>Irshad Soudagar</h3>
+              <p class="role font-serif-italic">Co-Founder</p>
+              <p class="bio">Hi, I'm Irshad. My journey began in hospitality, building trusted brands like Niyaaz and
+                TBQ, and establishing NFCI
+                Hotel Management Institute to shape future hospitality professionals.
+
+                My experience led me to co-found Social Santa, where I lead strategy and partnerships. Through ventures
+                like Galangal
+                and Assal Mawla Darbar, I continue to bring together hospitality, brand-building, and meaningful
+                customer experiences.
+
+              </p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="240">
+            <div class="founder">
+              <div class="founder-photo"><span class="initials" aria-hidden="true">AK</span><img
+                  src="assets/images/ameysir.webp" alt="Amey Kadle" loading="lazy" onerror="this.remove()"></div>
+              <h3>Amey Kadle</h3>
+              <p class="role font-serif-italic">Co-Founder</p>
+              <p class="bio">THi, I'm Amey. My passion for technology started early, leading me to build products and
+                eventually found Ajynkya
+                Technology, helping businesses turn technology into commercial results.
+
+                At Social Santa, I bring technical expertise, strategic thinking, and operational discipline to help
+                brands scale. I
+                believe great creative ideas need strong systems and execution to deliver lasting business growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="dark-band">
+        <div class="inner">
+          <div class="reveal">
+            <p class="eyebrow">Strategy | Branding | Creative Direction</p>
+            <h2 class="h2 mt3">Elevate your brand to <span class="font-serif-italic text-primary">new heights</span>
+              with us.</h2>
+            <p class="p">Our mission is to empower mid and growth-stage brands with hyper-targeted marketing and
+              captivating design, driving sustainable growth and long-term commercial success — backed by deep expertise
+              in retail, hospitality, visual styling and brand strategy.</p>
+          </div>
+          <div class="pillars">
+            <div class="reveal">
+              <div class="pillar">Strategic Business Vision</div>
+            </div>
+            <div class="reveal" data-delay="100">
+              <div class="pillar">Hyper-Targeted Approach</div>
+            </div>
+            <div class="reveal" data-delay="200">
+              <div class="pillar">Aesthetic Excellence</div>
+            </div>
+            <div class="reveal" data-delay="300">
+              <div class="pillar">Growth-Stage Focused</div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- <section class="section">
+        <div class="reveal">
+          <p class="eyebrow">In-house production</p>
+          <h2 class="h2 mt3">From script to screen — <span class="font-serif-italic text-primary">under one roof.</span>
+          </h2>
+          <p class="lead-muted wide">We write it. We shoot it. We cut the reels. No handoffs, no lost vision.</p>
+        </div>
+        <div class="grid-gap6 md3 mt12">
+          <div class="reveal">
+            <div class="prod-card">
+              <p class="k">Shoots</p>
+              <h3 class="font-serif-italic">On set.</h3>
+              <p class="d">Full production — lighting, talent, product, and campaign days handled in-house.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="120">
+            <div class="prod-card">
+              <p class="k">Scripts</p>
+              <h3 class="font-serif-italic">Story first.</h3>
+              <p class="d">Concepts, hooks, and shot lists written before a camera rolls.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="240">
+            <div class="prod-card">
+              <p class="k">Reels</p>
+              <h3 class="font-serif-italic">Cut for scroll.</h3>
+              <p class="d">Short-form edits built to stop thumbs and drive the story.</p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- <section class="marquee">
+        <div class="marquee-track animate-marquee"><span class="marquee-item">Scripting <span>✦</span></span><span
+            class="marquee-item">Direction <span>✦</span></span><span class="marquee-item">Edit &amp; grade
+            <span>✦</span></span><span class="marquee-item">Motion <span>✦</span></span><span
+            class="marquee-item">Shoots <span>✦</span></span><span class="marquee-item">Reels <span>✦</span></span><span
+            class="marquee-item">Scripting <span>✦</span></span><span class="marquee-item">Direction
+            <span>✦</span></span><span class="marquee-item">Edit &amp; grade <span>✦</span></span><span
+            class="marquee-item">Motion <span>✦</span></span><span class="marquee-item">Shoots
+            <span>✦</span></span><span class="marquee-item">Reels <span>✦</span></span></div>
+      </section> -->
+
+      <!-- <section class="section">
+        <div class="reveal">
+          <h2 class="h2">Numbers that tell <span class="font-serif-italic text-primary">the story so far.</span></h2>
+          <p class="lead-muted">Half a decade of building brands across industries — with the same curiosity we started
+            with.</p>
+        </div>
+        <div class="num-grid">
+          <div class="num-item">
+            <p class="num"><span data-counter="5" data-suffix="+">0+</span></p>
+            <p class="lbl">Years in practice</p>
+          </div>
+          <div class="num-item">
+            <p class="num"><span data-counter="50" data-suffix="+">0+</span></p>
+            <p class="lbl">Brands partnered</p>
+          </div>
+          <div class="num-item">
+            <p class="num"><span data-counter="2" data-suffix="">0</span></p>
+            <p class="lbl">Studio cities</p>
+          </div>
+          <div class="num-item">
+            <p class="num"><span data-counter="360" data-suffix="°">0°</span></p>
+            <p class="lbl">Service coverage</p>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="cta-section">
+        <div class="reveal">
+          <div class="cta-box">
+            <div class="blob"></div>
+            <!-- <p class="cta-eyebrow">Dear Santa…</p> -->
+            <h2 class="cta-title">What's on your brand's <span class="font-serif-italic">wishlist?</span></h2>
+            <a href="contact.html" class="cta-btn">Let's talk →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="reveal">
+          <h2 class="footer-title">Let's build something <span class="font-serif-italic text-primary">people
+              trust.</span></h2>
+        </div>
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">social<span class="text-primary">santa.</span></p>
+            <p class="footer-note">360° marketing studio — Belagavi &amp; Mumbai.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-label">Pages</p>
+            <a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">Work</a><a
+              href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <p class="footer-label">Say hello</p>
+            <a href="mailto:hello@socialsanta.studio">hello@socialsanta.studio</a>
+            <a href="tel:+918792757839">+91 87927 57839</a>
+          </div>
+          <div class="footer-col">
+            <p class="footer-label">Studios</p>
+            <p>Belagavi</p>
+            <p>Mumbai</p>
+          </div>
+        </div>
+        <p class="footer-copy">© <span id="year">2026</span> Social Santa. Empowering businesses worldwide through
+          creativity.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    /* header text turns light while it overlaps the dark hero */
+    (function () {
+      var header = document.querySelector(".site-header"), hero = document.querySelector(".ab-hero");
+      if (!header || !hero) return;
+      function check() { header.classList.toggle("over-dark", hero.getBoundingClientRect().bottom > 56); }
+      check(); window.addEventListener("scroll", check, { passive: true }); window.addEventListener("resize", check);
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yali Rudraksha Branding &amp; Packaging Case Study | Social Santa</title>
+    <meta name="description"
+        content="How Social Santa built Yali Rudraksha, a single-origin rudraksha brand from Nuwara Eliya, Sri Lanka: emblem, typography, colour palette, packaging and stationery.">
+    <link rel="canonical" href="https://socialsanta.in/yali.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Yali Rudraksha Branding &amp; Packaging | Social Santa">
+    <meta property="og:description"
+        content="A single-origin devotional jewellery brand sourced from Nuwara Eliya, Sri Lanka.">
+    <meta property="og:url" content="https://socialsanta.in/yali.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yali Rudraksha Branding &amp; Packaging | Social Santa">
+    <meta name="twitter:description"
+        content="A single-origin devotional jewellery brand sourced from Nuwara Eliya, Sri Lanka.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap">
+    <style>
+        /* ===== YALI RUDRAKSHA page (uses the site theme from style.css) ===== */
+        .yl-page {
+            --yl-olive: #163832;
+            --yl-ivory: #fff1d6;
+        }
+
+        .yl-sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+
+        /* lets the hero run up behind the header */
+        body[data-page="yali"] .site-header {
+            margin-bottom: -5.25rem;
+        }
+
+        /* HERO */
+        .yl-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 7rem 3.5% 3.5rem;
+            overflow: hidden;
+            box-sizing: border-box;
+            color: var(--yl-ivory);
+            background:
+                linear-gradient(rgba(10, 28, 24, .55), rgba(10, 28, 24, .55)),
+                url("https://www.socialsanta.in/images/YBG.webp") center center / cover no-repeat;
+        }
+
+        .yl-hero-inner {
+            width: 100%;
+            min-height: calc(100vh - 10.5rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .yl-hero-title {
+            margin: auto 0;
+            font-size: clamp(2.6rem, 8.6vw, 11rem);
+            font-weight: 900;
+            line-height: .95;
+            letter-spacing: -.065em;
+            text-transform: uppercase;
+            color: rgba(255, 241, 214, .42);
+        }
+
+        .yl-hero-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 50px;
+        }
+
+        .yl-hero-details {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .yl-hero-item h3 {
+            margin: 0 0 20px;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .yl-hero-item p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: .9;
+        }
+
+        .yl-hero-description {
+            max-width: 650px;
+            margin: 0 0 0 auto;
+            font-size: clamp(1rem, 1.5vw, 1.4rem);
+            font-weight: 700;
+            line-height: 1.65;
+        }
+
+        /* header: light while it sits over the hero, normal once you scroll past */
+        body[data-page="yali"] .site-header:not(.yl-past) .logo {
+            color: #fff;
+        }
+
+        body[data-page="yali"] .site-header:not(.yl-past) .logo .text-primary {
+            color: var(--accent);
+        }
+
+        body[data-page="yali"] .site-header:not(.yl-past) .header-cta {
+            background: #fff;
+            color: var(--ink);
+        }
+
+        body[data-page="yali"] .site-header:not(.yl-past) .menu-btn {
+            border-color: #fff;
+        }
+
+        body[data-page="yali"] .site-header:not(.yl-past) .menu-icon i {
+            background: #fff;
+        }
+
+        body[data-page="yali"] .site-header:not(.yl-past) .menu-btn[aria-expanded="true"] {
+            border-color: var(--foreground);
+        }
+
+        body[data-page="yali"] .site-header:not(.yl-past) .menu-btn[aria-expanded="true"] .menu-icon i {
+            background: var(--foreground);
+        }
+
+        @media (min-width: 64rem) {
+            body[data-page="yali"] .site-header:not(.yl-past) .nav-menu-list>.nav-item>.nav-link {
+                color: #fff;
+            }
+
+            body[data-page="yali"] .site-header:not(.yl-past) .nav-menu-list>.nav-item>.nav-link:hover {
+                color: var(--accent);
+            }
+        }
+
+        /* PROJECT DETAILS BAR */
+        .yl-meta {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .yl-meta-inner {
+            max-width: 80rem;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 1.5rem;
+            gap: 1.5rem;
+        }
+
+        .yl-meta-label {
+            display: block;
+            margin-bottom: .35rem;
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--muted-foreground);
+        }
+
+        .yl-meta strong {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* SECTIONS */
+        .yl-section {
+            padding: 5rem 0;
+        }
+
+        .yl-alt {
+            background: var(--secondary);
+        }
+
+        .yl-wrap {
+            max-width: 80rem;
+            margin: auto;
+            padding: 0 1.5rem;
+        }
+
+        .yl-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .yl-label {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            color: var(--primary);
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .13em;
+        }
+
+        .yl-label:before {
+            content: "";
+            width: 1.8rem;
+            height: 2px;
+            background: currentColor;
+        }
+
+        .yl-title {
+            margin-top: 1rem;
+            font-size: clamp(2rem, 4.4vw, 3.6rem);
+            line-height: 1;
+            letter-spacing: -.05em;
+            font-weight: 800;
+        }
+
+        .yl-title em {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            color: var(--primary);
+        }
+
+        .yl-text {
+            margin-top: 1.25rem;
+            color: var(--muted-foreground);
+            line-height: 1.8;
+            font-size: 1.02rem;
+        }
+
+        .yl-small {
+            margin-top: 1.5rem;
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--muted-foreground);
+        }
+
+        .yl-meta-row {
+            margin-top: 1.5rem;
+            font-weight: 700;
+        }
+
+        .yl-meta-row span {
+            color: var(--muted-foreground);
+            font-weight: 500;
+            margin-right: .4rem;
+        }
+
+        .yl-image {
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: var(--secondary);
+        }
+
+        .yl-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .yl-panel-img {
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+            border-radius: 1.6rem;
+            background: var(--yl-ivory);
+        }
+
+        .yl-panel-img img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .yl-names {
+            margin: 1.5rem 0 0;
+            display: grid;
+            gap: .6rem;
+        }
+
+        .yl-names div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            align-items: baseline;
+            padding-bottom: .6rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .yl-names dt {
+            font-weight: 800;
+        }
+
+        .yl-names dd {
+            margin: 0;
+            color: var(--muted-foreground);
+        }
+
+        /* LOGO ANATOMY */
+        .yl-anatomy {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .yl-point {
+            padding: 1.4rem;
+            border: 1px solid var(--border);
+            border-radius: 1.35rem;
+            background: var(--background);
+        }
+
+        .yl-point h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -.02em;
+        }
+
+        .yl-point p {
+            margin-top: .5rem;
+            color: var(--muted-foreground);
+            font-size: .92rem;
+            line-height: 1.65;
+        }
+
+        /* IDENTITY BLOCK: wordmark + typography + palette */
+        .yl-identity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .yl-panel {
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: var(--background);
+        }
+
+        .yl-panel-visual {
+            min-height: 19rem;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        .yl-logo-visual {
+            background: var(--yl-ivory);
+        }
+
+        .yl-logo-visual img {
+            display: block;
+            max-width: 100%;
+            max-height: 16rem;
+            height: auto;
+        }
+
+        .yl-type-board {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 1.5rem;
+            border-radius: 0 0 1.6rem 1.6rem;
+            background: linear-gradient(135deg, var(--yl-olive), #0b1f1b);
+            color: var(--yl-ivory);
+        }
+
+        .yl-type-label {
+            display: block;
+            font-size: .72rem;
+            opacity: .7;
+        }
+
+        .yl-type-name {
+            display: block;
+            margin-top: .35rem;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -.02em;
+        }
+
+        .yl-type-abc {
+            display: block;
+            margin-top: .6rem;
+            font-size: .78rem;
+            line-height: 1.55;
+            opacity: .85;
+            word-break: break-all;
+        }
+
+        .yl-optima {
+            font-family: Optima, Candara, "Segoe UI", "Trebuchet MS", sans-serif;
+        }
+
+        .yl-helvetica {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .yl-panel-copy {
+            padding: 1.5rem 1.6rem 1.7rem;
+        }
+
+        .yl-panel-copy h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -.025em;
+        }
+
+        .yl-panel-copy p {
+            margin-top: .6rem;
+            color: var(--muted-foreground);
+            line-height: 1.75;
+            font-size: .95rem;
+        }
+
+        .yl-palette {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+            align-items: center;
+        }
+
+        .yl-palette-visual {
+            overflow: hidden;
+            border-radius: 2rem;
+            background: var(--yl-olive);
+        }
+
+        .yl-palette-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .yl-palette-copy {
+            padding: 1rem 1rem 1rem 2rem;
+        }
+
+        .yl-palette-copy h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -.03em;
+        }
+
+        .yl-palette-copy>p {
+            margin-top: .7rem;
+            color: var(--muted-foreground);
+            line-height: 1.75;
+        }
+
+        .yl-colors {
+            list-style: none;
+            margin: 1.4rem 0 0;
+            padding: 0;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .yl-colors li {
+            display: grid;
+            grid-template-columns: 2.6rem 1fr;
+            gap: .9rem;
+            align-items: start;
+        }
+
+        .yl-colors i {
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15);
+        }
+
+        .yl-colors strong {
+            display: block;
+            font-size: .98rem;
+        }
+
+        .yl-colors strong span {
+            margin-left: .4rem;
+            color: var(--muted-foreground);
+            font-weight: 500;
+            font-size: .82rem;
+        }
+
+        .yl-colors p {
+            margin-top: .25rem;
+            color: var(--muted-foreground);
+            font-size: .88rem;
+            line-height: 1.65;
+        }
+
+        /* DESIGN SECTIONS */
+        .yl-app {
+            padding: 3.5rem 0;
+        }
+
+        .yl-app-head {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .yl-app-head .yl-title {
+            margin-top: 0;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            white-space: nowrap;
+        }
+
+        .yl-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .yl-app .yl-image {
+            margin-top: 1.75rem;
+        }
+
+        .yl-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .yl-cards.two {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .yl-card {
+            padding: 1.6rem;
+            border: 1px solid var(--border);
+            border-radius: 1.35rem;
+            background: var(--background);
+        }
+
+        .yl-card h3 {
+            font-size: 1.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -.025em;
+        }
+
+        .yl-card p {
+            margin-top: .7rem;
+            color: var(--muted-foreground);
+            font-size: .95rem;
+            line-height: 1.75;
+        }
+
+        .yl-card ul {
+            margin: 1rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: .5rem;
+            font-size: .92rem;
+        }
+
+        .yl-card li {
+            display: flex;
+            gap: .6rem;
+        }
+
+        .yl-card li:before {
+            content: "↗";
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* TABLE */
+        .yl-table-wrap {
+            margin-top: 2.5rem;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 1.35rem;
+            background: var(--background);
+        }
+
+        .yl-table {
+            width: 100%;
+            min-width: 44rem;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: .93rem;
+        }
+
+        .yl-table th {
+            padding: 1rem 1.25rem;
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--muted-foreground);
+            border-bottom: 1px solid var(--border);
+            background: var(--secondary);
+        }
+
+        .yl-table td {
+            padding: 1.1rem 1.25rem;
+            vertical-align: top;
+            line-height: 1.6;
+            color: var(--muted-foreground);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .yl-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .yl-table td:first-child {
+            font-weight: 800;
+            color: var(--foreground);
+        }
+
+        .yl-table td:last-child {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* CLIENT NAMES STRIP */
+        .yl-marquee {
+            overflow: hidden;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 1.6rem 0;
+            margin-top: 2rem;
+        }
+
+        .yl-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: yl-scroll 70s linear infinite;
+        }
+
+        .yl-marquee-set {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .yl-marquee-set span {
+            padding: 0 2rem;
+            font-size: clamp(1.4rem, 3vw, 2.4rem);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        @keyframes yl-scroll {
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .yl-marquee-track {
+                animation: none;
+            }
+        }
+
+        /* TABLET + MOBILE */
+        @media (max-width: 850px) {
+
+            .yl-split,
+            .yl-identity-grid,
+            .yl-palette {
+                grid-template-columns: 1fr;
+            }
+
+            .yl-split {
+                gap: 2rem;
+            }
+
+            .yl-anatomy {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .yl-cards,
+            .yl-cards.two {
+                grid-template-columns: 1fr;
+            }
+
+            .yl-palette-copy {
+                padding: 1rem .25rem;
+            }
+
+            .yl-hero {
+                min-height: 650px;
+                padding: 6rem 24px 2.5rem;
+            }
+
+            .yl-hero-inner {
+                min-height: calc(100svh - 8.5rem);
+            }
+
+            .yl-hero-bottom {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .yl-hero-description {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .yl-section {
+                padding: 3.5rem 0;
+            }
+
+            .yl-meta-inner {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .yl-anatomy {
+                grid-template-columns: 1fr;
+            }
+
+            .yl-type-board {
+                grid-template-columns: 1fr;
+            }
+
+            .yl-app-head {
+                gap: 1rem;
+            }
+
+            .yl-app-head .yl-title {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body data-page="yali">
+    <div class="shell yl-page">
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="index.html" class="logo">social<span class="text-primary">santa.</span></a>
+                <div class="header-actions">
+                    <a href="contact.html" class="header-cta">Start a project →</a>
+                    <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+                        aria-controls="nav-menu"><span class="menu-icon"
+                            aria-hidden="true"><i></i><i></i></span></button>
+                </div>
+                <nav class="nav-menu" id="nav-menu" aria-label="Main menu">
+                    <ul class="nav-menu-list">
+                        <li class="nav-item" style="--i:0">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item" style="--i:2"><a href="work.html" class="nav-link">Work</a></li>
+
+                        <li class="nav-item has-sub" style="--i:1"><a href="services.html"
+                                class="nav-link">Services</a><button type="button" class="nav-sub-toggle"
+                                aria-expanded="false" aria-controls="nav-sub" aria-label="Show services"><span
+                                    aria-hidden="true"></span></button>
+                            <!-- <div class="nav-sub" id="nav-sub">
+                                <ul>
+                                    <li><a href="brand-strategy.html">Brand strategy</a></li>
+                                    <li><a href="identity-design.html">Identity &amp; design</a></li>
+                                    <li><a href="website-development.html">Website &amp; product</a></li>
+                                    <li><a href="performance-marketing.html">Performance marketing</a></li>
+                                    <li><a href="film-photography.html">Film &amp; photography</a></li>
+                                    <li><a href="market research-consultations.html">Market Research &amp;
+                                            consultations</a></li>
+                                    <li><a href="influencer-marketing.html">Influencer marketing</a></li>
+                                    <li><a href="offline-marketing.html">Offline marketing</a></li>
+                                </ul>
+                            </div> -->
+                        </li>
+                        <li class="nav-item" style="--i:0"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item" style="--i:3"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <a href="contact.html" class="nav-cta nav-item" style="--i:4">Start a project →</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section class="yl-hero" id="yl-hero">
+                <div class="yl-hero-inner">
+                    <h1 class="yl-hero-title">Yali Rudraksha<span class="yl-sr"> branding and packaging case
+                            study</span></h1>
+                    <div class="yl-hero-bottom">
+                        <div class="yl-hero-details">
+                            <div class="yl-hero-item">
+                                <h3>SERVICE:</h3>
+                                <p>BRANDING &amp; PACKAGING</p>
+                            </div>
+                            <div class="yl-hero-item">
+                                <h3>ORIGIN:</h3>
+                                <p>NUWARA ELIYA, SRI LANKA</p>
+                            </div>
+                        </div>
+                        <p class="yl-hero-description">
+                            A single-origin rudraksha brand sourced from one place only: Nuwara Eliya, the highest
+                            town in Sri Lanka, 1,868m above sea level.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT DETAILS -->
+            <section class="yl-meta" aria-label="Project details">
+                <div class="yl-meta-inner">
+                    <div><span class="yl-meta-label">Project</span><strong>Yali Rudraksha</strong></div>
+                    <div><span class="yl-meta-label">Capability</span><strong>Branding &amp; packaging</strong></div>
+                    <div><span class="yl-meta-label">Origin</span><strong>Nuwara Eliya, Sri Lanka</strong></div>
+                </div>
+            </section>
+
+            <!-- PACKAGING & STATIONERY -->
+            <section class="yl-section yl-app">
+                <div class="yl-wrap">
+                    <div class="yl-app-head reveal">
+                        <h2 class="yl-title">Packaging &amp; stationery</h2>
+                        <span class="yl-line"></span>
+                    </div>
+                    <div class="yl-image reveal">
+                        <img src="https://www.socialsanta.in/images/YStationery.webp"
+                            alt="Yali Rudraksha stationery and packaging suite - letterhead, care card, box, thank you card, business card">
+                    </div>
+                    <!-- <div class="yl-cards">
+                                    <article class="yl-card reveal">
+                                        <h3>Single-Origin Ceylon Source.</h3>
+                                        <p>Not Nepal. Not Indonesia. Nuwara Eliya, Sri Lanka — a sourcing origin no other
+                                            commercial rudraksha brand has established. In a category full of “ethically sourced”
+                                            claims, this is an actual, specific, nameable place.</p>
+                                    </article>
+                                    <article class="yl-card reveal" data-delay="100">
+                                        <h3>Traceability to Harvest.</h3>
+                                        <p>Every bead ships with a harvest reference — farmer, hillside, season. Not a lab batch
+                                            number. A real origin record. This is provenance, not certification. The difference
+                                            matters to a buyer who has been burned by fakes before.</p>
+                                    </article>
+                                    <article class="yl-card reveal" data-delay="200">
+                                        <h3>The ₹1111 price is not just a number. It’s a message.</h3>
+                                        <p>1‑1‑1‑1. Four ones. In spiritual numerology this represents new beginnings, divine
+                                            alignment, the singular. Shiva is the Adi — the first, the one. A Panchmukhi bead
+                                            representing the five faces of Shiva, priced at 1111. That’s not a price point. That’s a
+                                            statement. Used exactly as is, and explained openly on the product page — it will be
+                                            remembered.</p>
+                                    </article>
+                                </div> -->
+                </div>
+            </section>
+
+            <!-- PRODUCT SHOWCASE -->
+            <section class="yl-section yl-app">
+                <div class="yl-wrap">
+                    <div class="yl-app-head reveal">
+                        <h2 class="yl-title">Product showcase</h2>
+                        <span class="yl-line"></span>
+                    </div>
+                    <div class="yl-image reveal">
+                        <img src="https://www.socialsanta.in/images/YProduct.webp"
+                            alt="Yali Rudraksha product photography, certificate of authenticity, and care instructions card">
+                    </div>
+                    <!-- <div class="yl-cards two">
+                                    <article class="yl-card reveal">
+                                        <h3>Thank you</h3>
+                                        <p>Thank you for choosing YALI Rudraksha.</p>
+                                        <p>Every Rudraksha is a unique gift of nature, carefully selected and respectfully
+                                            sourced. We are honored to be a part of your spiritual journey and hope it brings you
+                                            peace, strength, and positive energy every day.</p>
+                                        <p>With gratitude, Team YALI</p>
+                                    </article>
+                                    <article class="yl-card reveal" data-delay="100">
+                                        <h3>Care instructions</h3>
+                                        <p>Treat your Rudraksha with care. Keep it clean and dry, avoid exposure to harsh
+                                            chemicals or prolonged moisture, and gently wipe it with a soft cloth after use. With
+                                            proper care, it will preserve its natural beauty and accompany your spiritual journey
+                                            for years to come.</p>
+                                        <ul>
+                                            <li>Keep your Rudraksha clean and dry</li>
+                                            <li>Avoid contact with perfumes, soaps &amp; harsh chemicals</li>
+                                            <li>Wipe gently with a soft cloth after use</li>
+                                            <li>Apply a few drops of natural oil occasionally to maintain its finish</li>
+                                            <li>Store it in a clean, dry place when not in use</li>
+                                        </ul>
+                                    </article>
+                                </div> -->
+                </div>
+            </section>
+
+
+            <!-- BRAND STORY -->
+            <section class="yl-section">
+                <div class="yl-wrap yl-split">
+                    <div class="yl-image reveal">
+                        <img src="https://www.socialsanta.in/images/YStory.webp"
+                            alt="The Guardian and the Hills - Yali Rudraksha brand story, Nuwara Eliya, Seetha Amman Temple, Ashok Vatika">
+                    </div>
+                    <div class="reveal" data-delay="100">
+                        <p class="yl-label">Brand identity design</p>
+                        <h2 class="yl-title">The guardian and the <em>hills.</em></h2>
+                        <p class="yl-text">Yali Rudraksha came to us with a single, uncompromising idea: a rudraksha
+                            brand sourced from one place, and one place only — Nuwara Eliya, the highest town in Sri
+                            Lanka, 1,868m above sea level. No other commercial rudraksha brand has claimed this origin.
+                            We built the identity around that fact, weaving in the site’s proximity to Seetha Amman
+                            Temple — the place tradition holds as the site of Sita’s captivity in the Ramayana — and
+                            Ashok Vatika, the garden where Ravana brought Sita Ma, where she waited, held her faith,
+                            and where Hanuman found her. From a custom Gaja-Yali emblem to a full stationery and
+                            packaging system, every touchpoint was designed to read as authentic, traceable, and
+                            quietly premium.</p>
+                        <p class="yl-meta-row"><span>Location:</span> Nuwara Eliya, Sri Lanka</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOGO ANATOMY -->
+            <section class="yl-section yl-alt">
+                <div class="yl-wrap">
+                    <div class="yl-split">
+                        <div class="reveal">
+                            <p class="yl-label">Logo anatomy</p>
+                            <h2 class="yl-title">Yali (Gaja‑Vyala) <em>Rudraksha</em></h2>
+                            <p class="yl-text">Every mark in the emblem was chosen, not decorated. The mythical
+                                Gaja‑Vyala guards the centre, framed by a rudraksha bead outline, paired with a refined
+                                custom wordmark.</p>
+                        </div>
+                        <div class="yl-panel-img reveal" data-delay="100">
+                            <img src="https://www.socialsanta.in/Yali/presentationyali1.png"
+                                alt="Yali Rudraksha Gaja-Vyala emblem">
+                        </div>
+                    </div>
+                    <div class="yl-anatomy">
+                        <article class="yl-point reveal">
+                            <h3>Rudraksh Outline</h3>
+                            <p>The bead outline that frames the emblem.</p>
+                        </article>
+                        <article class="yl-point reveal" data-delay="100">
+                            <h3>Yali (Gaja‑Vyala)</h3>
+                            <p>Represents Strength, Protection, Courage and Confidence.</p>
+                        </article>
+                        <article class="yl-point reveal" data-delay="200">
+                            <h3>Refined Typography</h3>
+                            <p>Elegant typography reflects sophistication, quality &amp; timeless craftsmanship.</p>
+                        </article>
+                        <article class="yl-point reveal" data-delay="300">
+                            <h3>Rudraksha</h3>
+                            <p>Represents Authenticity, Purity, Natural Origin and Quality.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THE MARK -->
+            <section class="yl-section">
+                <div class="yl-wrap">
+                    <div class="reveal">
+                        <p class="yl-label">Logo</p>
+                        <h2 class="yl-title">The <em>mark.</em></h2>
+                        <p class="yl-text" style="max-width:46rem">Inspired by the mythical Gaja Yali and the sacred
+                            Rudraksha, our logo symbolizes divine strength, protection, and spiritual harmony, brought
+                            together with a custom-crafted YALI wordmark.</p>
+                    </div>
+                    <div class="yl-image reveal" style="margin-top:2.5rem">
+                        <img src="https://www.socialsanta.in/images/YLogoRow.webp"
+                            alt="Yali Rudraksha logo lockup variations - full emblem, icon mark, wordmark">
+                    </div>
+                </div>
+            </section>
+
+            <!-- BRAND NAME -->
+            <section class="yl-section yl-alt">
+                <div class="yl-wrap">
+                    <div class="reveal" style="max-width:48rem">
+                        <p class="yl-label">Brand name</p>
+                        <h2 class="yl-title">Yali Rudraksha</h2>
+                        <dl class="yl-names">
+                            <div>
+                                <dt>"Yali" (Gaja-Vyala)</dt>
+                                <dd>= Strength, Protection, Courage, Confidence</dd>
+                            </div>
+                            <div>
+                                <dt>"Rudraksha"</dt>
+                                <dd>= Authenticity, Purity, Natural Origin, Quality</dd>
+                            </div>
+                        </dl>
+                        <p class="yl-text">Yali Rudraksha is a single-origin devotional jewellery brand for spiritual
+                            seekers, Shiva devotees, Sanatan Dharma followers and mindfulness practitioners who value
+                            traceable, ethically sourced sacred products. The identity was built to feel like heritage
+                            craftsmanship rather than another catalogue brand — refined typography, a custom wordmark,
+                            and a palette drawn straight from the Ceylon hillsides.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IDENTITY: wordmark + typography + colour palette -->
+            <section class="yl-section yl-alt" style="padding-top:0">
+                <div class="yl-wrap">
+                    <div class="yl-identity-grid">
+                        <article class="yl-panel reveal">
+                            <div class="yl-panel-visual yl-logo-visual">
+                                <img src="https://www.socialsanta.in/images/YLogoMark.webp"
+                                    alt="Yali wordmark and emblem">
+                            </div>
+                            <div class="yl-panel-copy">
+                                <h3>Wordmark &amp; emblem</h3>
+                                <p>A custom-crafted YALI wordmark sits alongside the Gaja‑Vyala emblem, so the brand
+                                    reads clearly as a full lockup, an icon mark or a wordmark on its own.</p>
+                            </div>
+                        </article>
+
+                        <article class="yl-panel reveal" data-delay="100">
+                            <div class="yl-panel-visual yl-type-board">
+                                <div>
+                                    <span class="yl-type-label">Primary · Display</span>
+                                    <strong class="yl-type-name yl-optima">Optima</strong>
+                                    <span
+                                        class="yl-type-abc yl-optima">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</span>
+                                </div>
+                                <div>
+                                    <span class="yl-type-label">Secondary · Body &amp; UI</span>
+                                    <strong class="yl-type-name yl-helvetica">Helvetica</strong>
+                                    <span
+                                        class="yl-type-abc yl-helvetica">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</span>
+                                </div>
+                            </div>
+                            <div class="yl-panel-copy">
+                                <h3>Typography</h3>
+                                <p>Optima is used for headlines, the wordmark’s spirit, pull quotes and packaging hero
+                                    text. Helvetica is used for body copy, navigation, product detail, captions and the
+                                    ‘RUDRAKSH’ lockup treatment.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="yl-palette reveal">
+                        <div class="yl-palette-visual">
+                            <img src="https://www.socialsanta.in/images/YColor.webp"
+                                alt="Yali Rudraksha color palette swatches - Midnight Olive #163832 and Ivory #FFF1D6">
+                        </div>
+                        <div class="yl-palette-copy">
+                            <h3>Color palette</h3>
+                            <p>Inspired by nature and ancient traditions, the deep olive reflects strength and
+                                spiritual grounding, while the warm ivory symbolizes purity and divine light. Together,
+                                they create a timeless and elegant identity.</p>
+                            <ul class="yl-colors">
+                                <li>
+                                    <i style="background:#163832"></i>
+                                    <div><strong>Midnight Olive <span>Primary · #163832</span></strong>
+                                        <p>Inspired by the tea hillsides and cold, high-altitude air of Nuwara Eliya.
+                                            Carries the brand across logo, packaging and stationery.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i style="background:#fff1d6"></i>
+                                    <div><strong>Ivory <span>Secondary · #FFF1D6</span></strong>
+                                        <p>A warm, temple-light neutral. Used for backgrounds, print collateral and the
+                                            certificate of authenticity, keeping the system soft against the deep
+                                            olive.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- COMPETITOR ANALYSIS -->
+            <!-- <section class="yl-section yl-alt">
+                <div class="yl-wrap">
+                    <div class="reveal">
+                        <p class="yl-label">Market positioning</p>
+                        <h2 class="yl-title">Competitor <em>analysis.</em></h2>
+                    </div>
+                    <div class="yl-table-wrap reveal">
+                        <table class="yl-table">
+                            <thead>
+                                <tr>
+                                    <th>Brand</th>
+                                    <th>Strength</th>
+                                    <th>Weakness</th>
+                                    <th>What Yali owns</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rudra Centre</td>
+                                    <td>25 years, huge catalogue, ISO certified</td>
+                                    <td>2005-era website, no origin story, generic</td>
+                                    <td>Design, provenance, modern tone</td>
+                                </tr>
+                                <tr>
+                                    <td>Nepa Rudraksha</td>
+                                    <td>Ajay Devgan ambassador, aggressive D2C, loyalty programs</td>
+                                    <td>Nepal/Indonesia sourcing, no traceability</td>
+                                    <td>Ceylon origin is exclusive</td>
+                                </tr>
+                                <tr>
+                                    <td>Manka / Rudrakx</td>
+                                    <td>Most design-forward competitors, microscopy certs</td>
+                                    <td>Still use standard Nepal sourcing</td>
+                                    <td>Same proof tools, different origin</td>
+                                </tr>
+                                <tr>
+                                    <td>UK local sellers</td>
+                                    <td>Local convenience</td>
+                                    <td>Dated, generalist, no premium positioning</td>
+                                    <td>Everything above</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- TARGET AUDIENCE -->
+            <!-- <section class="yl-section">
+                <div class="yl-wrap yl-split">
+                    <div class="reveal">
+                        <p class="yl-label">Who it’s for</p>
+                        <h2 class="yl-title">Target <em>audience.</em></h2>
+                    </div>
+                    <p class="yl-text reveal" data-delay="100" style="margin-top:0">Yali is crafted for spiritual
+                        seekers, Sanatan Dharma followers, Shiva devotees, Rudraksha practitioners, meditation and yoga
+                        enthusiasts, Vedic philosophy followers, Ayurveda and holistic wellness seekers, mindfulness
+                        practitioners, Hindu pilgrims, and conscious consumers who value authenticity. It also appeals
+                        to those interested in energy studies, sacred traditions, devotional jewellery, heritage
+                        craftsmanship, and ethically sourced, traceable spiritual products.</p>
+                </div>
+            </section> -->
+
+            <!-- CLIENT NAMES STRIP -->
+            <!-- <section class="yl-marquee" aria-label="More work">
+                <div class="yl-marquee-track">
+                    <div class="yl-marquee-set"><span>✦ Niyaaz</span><span>✦ Galangal</span><span>✦ AMD</span><span>✦
+                            Navieo</span><span>✦ TBQ</span><span>✦ Koyala</span><span>✦ Yali Rudraksha</span><span>✦
+                            Sunny’s In A Bottle</span></div>
+                    <div class="yl-marquee-set" aria-hidden="true"><span>✦ Niyaaz</span><span>✦ Galangal</span><span>✦
+                            AMD</span><span>✦ Navieo</span><span>✦ TBQ</span><span>✦ Koyala</span><span>✦ Yali
+                            Rudraksha</span><span>✦ Sunny’s In A Bottle</span></div>
+                </div>
+            </section> -->
+        </main>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="reveal">
+                    <h2 class="footer-title">Let's build something <span class="font-serif-italic text-primary">people
+                            trust.</span></h2>
+                </div>
+                <div class="footer-grid">
+                    <div>
+                        <p class="footer-brand">social<span class="text-primary">santa.</span></p>
+                        <p class="footer-note">360° marketing studio — Belagavi &amp; Mumbai.</p>
+                    </div>
+                    <div class="footer-col">
+                        <p class="footer-label">Pages</p>
+                        <a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">Work</a><a
+                            href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <p class="footer-label">Say hello</p>
+                        <a href="mailto:hello@socialsanta.studio">hello@socialsanta.studio</a>
+                        <a href="tel:+918792757839">+91 87927 57839</a>
+                    </div>
+                    <div class="footer-col">
+                        <p class="footer-label">Studios</p>
+                        <p>Belagavi</p>
+                        <p>Mumbai</p>
+                    </div>
+                </div>
+                <p class="footer-copy">© <span id="year">2026</span> Social Santa. Empowering businesses worldwide
+                    through
+                    creativity.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        /* switches the header back to dark text once you scroll past the hero */
+        (function () {
+            var h = document.querySelector(".site-header"), hero = document.getElementById("yl-hero");
+            if (!h || !hero) return;
+            function f() { h.classList.toggle("yl-past", hero.getBoundingClientRect().bottom <= h.offsetHeight); }
+            f();
+            window.addEventListener("scroll", f, { passive: true });
+            window.addEventListener("resize", f);
+        })();
+    </script>
+</body>
+
+</html>

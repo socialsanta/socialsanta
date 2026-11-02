@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Annotsav 2026 — Event Branding | Social Santa</title>
+    <meta name="description"
+        content="A look at Social Santa's event identity and on-ground visual design for Annotsav 2026 in Belagavi.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap">
+    <style>
+        .ann-page {
+            --ann-red: #b5262c;
+            --ann-black: #201e1e;
+            --ann-paper: #f4f0e9;
+        }
+
+        .ann-wrap {
+            max-width: 80rem;
+            margin: auto;
+            padding: 0 1.5rem
+        }
+
+        .ann-hero {
+            padding: clamp(3rem, 8vw, 7rem) 0 3rem
+        }
+
+        .ann-kicker {
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: .16em;
+            font-weight: 700;
+            color: var(--ann-red);
+            display: flex;
+            align-items: center;
+            gap: .65rem
+        }
+
+        .ann-kicker:before {
+            content: "";
+            width: 1.8rem;
+            height: 2px;
+            background: currentColor
+        }
+
+        .ann-hero-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 3rem;
+            align-items: end;
+            margin-top: 1.4rem
+        }
+
+        .ann-hero h1 {
+            font-size: clamp(3.5rem, 9vw, 8.5rem);
+            line-height: .85;
+            letter-spacing: -.075em;
+            font-weight: 800;
+            max-width: 8ch
+        }
+
+        .ann-hero h1 em {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            color: var(--ann-red)
+        }
+
+        .ann-intro {
+            max-width: 38rem;
+            color: var(--muted-foreground);
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.8;
+            margin-left: auto
+        }
+
+        .ann-hero-image {
+            margin-top: 3rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: var(--ann-black);
+            aspect-ratio: 16/8;
+        }
+
+        .ann-hero-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover
+        }
+
+        .ann-meta {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .ann-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 1.4rem 0
+        }
+
+        .ann-meta small {
+            display: block;
+            color: var(--muted-foreground);
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            margin-bottom: .4rem
+        }
+
+        .ann-meta strong {
+            font-size: 1rem
+        }
+
+        .ann-section {
+            padding: clamp(4rem, 8vw, 7rem) 0
+        }
+
+        .ann-section-head {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            align-items: start
+        }
+
+        .ann-section h2 {
+            font-size: clamp(2.3rem, 5vw, 4.8rem);
+            line-height: .95;
+            letter-spacing: -.06em;
+            max-width: 12ch
+        }
+
+        .ann-section h2 em {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            color: var(--ann-red)
+        }
+
+        .ann-section-head p,
+        .ann-copy {
+            color: var(--muted-foreground);
+            line-height: 1.8;
+            max-width: 42rem
+        }
+
+        .ann-gallery {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 1rem
+        }
+
+        .ann-photo {
+            margin: 0;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            background: var(--ann-paper);
+            min-height: 18rem
+        }
+
+        .ann-photo img {
+            width: 100%;
+            height: 100%;
+            min-height: inherit;
+            display: block;
+            object-fit: cover;
+            transition: transform .6s ease
+        }
+
+        .ann-photo:hover img {
+            transform: scale(1.025)
+        }
+
+        .ann-gallery .wide {
+            grid-column: 1/-1;
+            aspect-ratio: 2.1/1;
+            min-height: 0
+        }
+
+        .ann-gallery .wide img {
+            min-height: 0
+        }
+
+        .ann-approach {
+            background: var(--ann-black);
+            color: #fff;
+            padding: clamp(3rem, 7vw, 6rem) 0
+        }
+
+        .ann-approach .ann-kicker {
+            color: #e5a2a0
+        }
+
+        .ann-approach h2 {
+            max-width: 13ch
+        }
+
+        .ann-approach .ann-section-head p {
+            color: rgba(255, 255, 255, .7)
+        }
+
+        .ann-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem
+        }
+
+        .ann-point {
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 1rem;
+            min-height: 12rem
+        }
+
+        .ann-point span {
+            font-size: .75rem;
+            color: #e5a2a0;
+            letter-spacing: .12em
+        }
+
+        .ann-point h3 {
+            font-size: 1.35rem;
+            margin: 2rem 0 .6rem;
+            letter-spacing: -.03em
+        }
+
+        .ann-point p {
+            color: rgba(255, 255, 255, .7);
+            font-size: .95rem;
+            line-height: 1.7
+        }
+
+        .ann-palette {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2.5rem
+        }
+
+        .ann-palette img {
+            width: 100%;
+            display: block;
+            border-radius: 1rem
+        }
+
+        .ann-swatches {
+            display: flex;
+            gap: .65rem;
+            margin-top: 1.2rem
+        }
+
+        .ann-swatch {
+            height: 4rem;
+            flex: 1;
+            border-radius: .55rem
+        }
+
+        .ann-swatch:nth-child(1) {
+            background: #b5262c
+        }
+
+        .ann-swatch:nth-child(2) {
+            background: #201e1e
+        }
+
+        .ann-swatch:nth-child(3) {
+            background: #fefefe;
+            border: 1px solid #ddd
+        }
+
+        .ann-end {
+            padding: 0 1.5rem 5rem
+        }
+
+        .ann-end-box {
+            max-width: 77rem;
+            margin: auto;
+            background: var(--ann-red);
+            color: white;
+            padding: clamp(2rem, 6vw, 4.5rem);
+            border-radius: 1.5rem
+        }
+
+        .ann-end-box h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: .92;
+            letter-spacing: -.06em;
+            max-width: 12ch
+        }
+
+        .ann-end-box p {
+            margin-top: 1rem;
+            max-width: 35rem;
+            color: rgba(255, 255, 255, .82);
+            line-height: 1.75
+        }
+
+        .ann-end-box a {
+            display: inline-flex;
+            margin-top: 1.5rem;
+            padding: .85rem 1.2rem;
+            border-radius: 999px;
+            background: #fff;
+            color: var(--ann-black);
+            font-weight: 700
+        }
+
+        @media(max-width:800px) {
+
+            .ann-hero-grid,
+            .ann-section-head,
+            .ann-palette {
+                grid-template-columns: 1fr
+            }
+
+            .ann-intro {
+                margin-left: 0
+            }
+
+            .ann-points {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:600px) {
+            .ann-wrap {
+                padding: 0 1.1rem
+            }
+
+            .ann-hero-image {
+                aspect-ratio: 4/3;
+                margin-top: 2rem
+            }
+
+            .ann-meta-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem
+            }
+
+            .ann-gallery {
+                grid-template-columns: 1fr
+            }
+
+            .ann-gallery .wide {
+                grid-column: auto;
+                aspect-ratio: 4/3
+            }
+
+            .ann-points {
+                grid-template-columns: 1fr
+            }
+
+            .ann-photo {
+                min-height: 14rem
+            }
+
+            .ann-end {
+                padding: 0 1.1rem 3.5rem
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .ann-photo img {
+                transition: none
+            }
+        }
+
+        /* ===== ANNOTSAV HERO (full-image hero with big title) ===== */
+        .ann-sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+
+        /* lets the hero run up behind the header */
+        body[data-page="annotsav"] .site-header {
+            margin-bottom: -5.25rem;
+        }
+
+        .ann2-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 7rem 3.5% 3.5rem;
+            overflow: hidden;
+            box-sizing: border-box;
+            color: var(--ann-paper);
+            background:
+                linear-gradient(rgba(32, 30, 30, .55), rgba(32, 30, 30, .55)),
+                url("assets/images/annovstav-hero.webp") center center / cover no-repeat;
+        }
+
+        .ann2-hero-inner {
+            width: 100%;
+            min-height: calc(100vh - 10.5rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .ann2-hero-title {
+            margin: auto 0;
+            font-size: clamp(3.2rem, 14.5vw, 17rem);
+            font-weight: 900;
+            line-height: .95;
+            letter-spacing: -.065em;
+            text-transform: uppercase;
+            color: rgba(244, 240, 233, .42);
+        }
+
+        .ann2-hero-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 50px;
+        }
+
+        .ann2-hero-details {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .ann2-hero-item h3 {
+            margin: 0 0 20px;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .ann2-hero-item p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: .85;
+        }
+
+        .ann2-hero-description {
+            max-width: 650px;
+            margin: 0 0 0 auto;
+            font-size: clamp(1rem, 1.5vw, 1.4rem);
+            font-weight: 700;
+            line-height: 1.65;
+        }
+
+        /* header: light while it sits over the hero, normal once you scroll past */
+        body[data-page="annotsav"] .site-header:not(.ann-past) .logo {
+            color: #fff;
+        }
+
+        body[data-page="annotsav"] .site-header:not(.ann-past) .logo .text-primary {
+            color: var(--accent);
+        }
+
+        body[data-page="annotsav"] .site-header:not(.ann-past) .header-cta {
+            background: #fff;
+            color: var(--ink);
+        }
+
+        body[data-page="annotsav"] .site-header:not(.ann-past) .menu-btn {
+            border-color: #fff;
+        }
+
+        body[data-page="annotsav"] .site-header:not(.ann-past) .menu-icon i {
+            background: #fff;
+        }
+
+        body[data-page="annotsav"] .site-header:not(.ann-past) .menu-btn[aria-expanded="true"] {
+            border-color: var(--foreground);
+        }
+
+        body[data-page="annotsav"] .site-header:not(.ann-past) .menu-btn[aria-expanded="true"] .menu-icon i {
+            background: var(--foreground);
+        }
+
+        @media (min-width: 64rem) {
+            body[data-page="annotsav"] .site-header:not(.ann-past) .nav-menu-list>.nav-item>.nav-link {
+                color: #fff;
+            }
+
+            body[data-page="annotsav"] .site-header:not(.ann-past) .nav-menu-list>.nav-item>.nav-link:hover {
+                color: var(--accent);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .ann2-hero {
+                padding: 6rem 24px 2.5rem;
+            }
+
+            .ann2-hero-inner {
+                min-height: calc(100svh - 8.5rem);
+            }
+
+            .ann2-hero-bottom {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .ann2-hero-description {
+                margin-left: 0;
+            }
+        }
+
+        /* ===== ANNOTSAV: typography card + colour palette row ===== */
+        .ann3-identity {
+            background: var(--secondary);
+        }
+
+        .ann3-card {
+            overflow: hidden;
+            border-radius: 1.6rem;
+            background: var(--background);
+        }
+
+        .ann3-type-board {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            min-height: 19rem;
+            padding: 2.5rem;
+            border-radius: 0 0 1.6rem 1.6rem;
+            background: linear-gradient(135deg, var(--ann-black), #5a1519);
+            color: var(--ann-paper);
+        }
+
+        .ann3-type-label {
+            display: block;
+            font-size: .75rem;
+            opacity: .7;
+        }
+
+        .ann3-type-name {
+            display: block;
+            margin-top: .4rem;
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -.03em;
+        }
+
+        .ann3-type-abc {
+            display: block;
+            margin-top: .8rem;
+            font-size: clamp(.75rem, 1.2vw, 1rem);
+            line-height: 1.6;
+            opacity: .85;
+            word-break: break-all;
+        }
+
+        .ann3-card-copy {
+            padding: 1.5rem 1.6rem 1.7rem;
+        }
+
+        .ann3-card-copy h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -.025em;
+        }
+
+        .ann3-card-copy p {
+            margin-top: .6rem;
+            max-width: 52rem;
+            color: var(--muted-foreground);
+            line-height: 1.75;
+            font-size: .95rem;
+        }
+
+        .ann3-palette {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+            align-items: center;
+        }
+
+        .ann3-palette-visual {
+            overflow: hidden;
+            border-radius: 2rem;
+            background: #1a1a1a;
+        }
+
+        .ann3-palette-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .ann3-palette-copy {
+            padding: 1rem 1rem 1rem 2rem;
+        }
+
+        .ann3-palette-copy h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -.03em;
+        }
+
+        .ann3-palette-copy p {
+            margin-top: .7rem;
+            color: var(--muted-foreground);
+            line-height: 1.75;
+        }
+
+        .ann3-chips {
+            list-style: none;
+            margin: 1.25rem 0 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem 1.4rem;
+            font-size: .85rem;
+            font-weight: 600;
+        }
+
+        .ann3-chips li {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .ann3-chips i {
+            width: 1.1rem;
+            height: 1.1rem;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .18);
+        }
+
+        @media (max-width: 850px) {
+            .ann3-palette {
+                grid-template-columns: 1fr;
+            }
+
+            .ann3-palette-copy {
+                padding: 1rem .25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ann3-type-board {
+                grid-template-columns: 1fr;
+                padding: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-page="annotsav">
+    <div class="shell ann-page">
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="index.html" class="logo">social<span class="text-primary">santa.</span></a>
+                <div class="header-actions"><a href="contact.html" class="header-cta">Start a project →</a><button
+                        class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+                        aria-controls="nav-menu"><span class="menu-icon"
+                            aria-hidden="true"><i></i><i></i></span></button></div>
+                <nav class="nav-menu" id="nav-menu" aria-label="Main menu">
+                    <ul class="nav-menu-list">
+                        <li class="nav-item" style="--i:0"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item" style="--i:2"><a href="work.html" class="nav-link">Work</a></li>
+                        <li class="nav-item has-sub" style="--i:1"><a href="services.html"
+                                class="nav-link">Services</a><button type="button" class="nav-sub-toggle"
+                                aria-expanded="false" aria-controls="nav-sub" aria-label="Show services"><span
+                                    aria-hidden="true"></span></button>
+                            <!-- <div class="nav-sub" id="nav-sub">
+                                <ul>
+                                    <li><a href="brand-strategy.html">Brand strategy</a></li>
+                                    <li><a href="identity-design.html">Identity &amp; design</a></li>
+                                    <li><a href="website-development.html">Website &amp; product</a></li>
+                                    <li><a href="performance-marketing.html">Performance marketing</a></li>
+                                    <li><a href="film-photography.html">Film &amp; photography</a></li>
+                                    <li><a href="market research-consultations.html">Market Research &amp;
+                                            consultations</a></li>
+                                    <li><a href="influencer-marketing.html">Influencer marketing</a></li>
+                                    <li><a href="offline-marketing.html">Offline marketing</a></li>
+                                </ul>
+                            </div> -->
+                        </li>
+                        <li class="nav-item" style="--i:0"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item" style="--i:3"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul><a href="contact.html" class="nav-cta nav-item" style="--i:4">Start a project →</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="ann2-hero" id="ann-hero">
+                <div class="ann2-hero-inner">
+                    <h1 class="ann2-hero-title">Annotsav<span class="ann-sr"> 2026 festival identity</span></h1>
+                    <div class="ann2-hero-bottom">
+                        <div class="ann2-hero-details">
+                            <div class="ann2-hero-item">
+                                <h3>SERVICE:</h3>
+                                <p>EVENT BRANDING &amp; PRINT</p>
+                            </div>
+                            <div class="ann2-hero-item">
+                                <h3>CLIENT:</h3>
+                                <p>ROTARY CLUB OF BELAGAVI</p>
+                            </div>
+                        </div>
+                        <p class="ann2-hero-description">
+                            For Annotsav 2026, we brought the festival’s food, culture and community into one bold
+                            visual language—designed to stand out on the street and feel connected across the venue.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="ann-meta">
+                <div class="ann-wrap ann-meta-grid">
+                    <div><small>Client</small><strong>Rotary Club of Belagavi</strong></div>
+                    <div><small>What we did</small><strong>Event branding &amp; print</strong></div>
+                    <div><small>Focus</small><strong>Visibility, consistency, atmosphere</strong></div>
+                </div>
+            </section>
+            <section class="ann-section">
+                <div class="ann-wrap">
+                    <div class="ann-section-head">
+                        <div>
+                            <!-- <p class="ann-kicker">On the ground</p>
+                            <h2>A festival identity built to <em>show up.</em></h2> -->
+                        </div>
+                        <!-- <p>From the first approach to the busy event spaces, the creative needed to be easy to spot,
+                            quick to read and unmistakably part of the same celebration. We carried the artwork across
+                            large-format displays and printed pieces.</p> -->
+                    </div>
+                    <div class="ann-gallery">
+                        <figure class="ann-photo"><img src="assets/images/annovstav-card1.webp"
+                                alt="Annotsav branded entrance and ticket counter"></figure>
+                        <figure class="ann-photo"><img src="https://www.socialsanta.in/images/ACard2.webp"
+                                alt="Annotsav sponsor signage at the festival"></figure>
+                        <figure class="ann-photo wide"><img
+                                src="https://www.socialsanta.in/images/annotsav%20flyer%202026%205%201.webp"
+                                alt="Annotsav event flyer artwork mockup"></figure>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="ann-approach">
+                <div class="ann-wrap">
+                    <div class="ann-section-head">
+                        <div>
+                            <p class="ann-kicker">The design thinking</p>
+                            <h2>One event. One clear <em>visual thread.</em></h2>
+                        </div>
+                        <p>The system balances a high-energy festival feel with practical information design, so the
+                            creative can work at a distance, in photographs and in printed formats.</p>
+                    </div>
+                    <div class="ann-points">
+                        <article class="ann-point"><span>01 / IMPACT</span>
+                            <h3>Strong from afar</h3>
+                            <p>Large headings and high-contrast layouts help key messages stay visible in busy public
+                                spaces.</p>
+                        </article>
+                        <article class="ann-point"><span>02 / CONSISTENCY</span>
+                            <h3>Connected touchpoints</h3>
+                            <p>A repeated graphic language ties together signage, sponsor placements and printed
+                                communication.</p>
+                        </article>
+                        <article class="ann-point"><span>03 / EXECUTION</span>
+                            <h3>Ready for real spaces</h3>
+                            <p>Artwork is considered for scale, legibility and the different ways visitors encounter the
+                                event.</p>
+                        </article>
+                    </div>
+                    <div class="ann-palette">
+                        <div>
+                            <p class="ann-kicker">Visual palette</p>
+                            <h2>Festive red. <em>Clean contrast.</em></h2>
+                            <p class="ann-copy" style="margin-top:1rem">A focused red, black and white palette gives the
+                                event a recognisable signature while keeping information clear.</p>
+                            <div class="ann-swatches" aria-label="Event colour palette"><span
+                                    class="ann-swatch"></span><span class="ann-swatch"></span><span
+                                    class="ann-swatch"></span></div>
+                        </div><img src="https://www.socialsanta.in/images/Acolor.webp"
+                            alt="Annotsav event colour palette reference">
+                    </div>
+                </div>
+            </section> -->
+            <section class="ann-section">
+                <div class="ann-wrap">
+                    <div class="ann-section-head">
+                        <div>
+                            <p class="ann-kicker">The takeaway</p>
+                            <h2>Design that becomes part of the <em>experience.</em></h2>
+                        </div>
+                        <p>Annotsav’s branding brings a consistent look to the places where people gather, explore and
+                            take photos. The result is a visual system designed to make the festival feel more joined-up
+                            from arrival through to the event itself.</p>
+                    </div>
+                    <div class="ann-gallery">
+                        <figure class="ann-photo"><img src="https://www.socialsanta.in/images/ACard3.webp"
+                                alt="Annotsav outdoor billboard creative"></figure>
+                        <figure class="ann-photo"><img src="https://www.socialsanta.in/images/Annlogo.webp"
+                                alt="Annotsav festival logo"></figure>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="ann-end">
+                <div class="ann-end-box">
+                    <p class="ann-kicker" style="color:#fff">Planning something people will remember?</p>
+                    <h2>Let’s make the visuals part of the story.</h2>
+                    <p>From event identity to on-ground print, Social Santa helps brands bring ideas into the real
+                        world.</p><a href="contact.html">Start a project ↗</a>
+                </div>
+            </section> -->
+
+            <section class="ann-section ann3-identity">
+                <div class="ann-wrap">
+                    <article class="ann3-card reveal">
+                        <div class="ann3-type-board">
+                            <div>
+                                <span class="ann3-type-label">Primary font</span>
+                                <strong class="ann3-type-name">[Add font name]</strong>
+                                <span
+                                    class="ann3-type-abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</span>
+                            </div>
+                            <div>
+                                <span class="ann3-type-label">Secondary font</span>
+                                <strong class="ann3-type-name">[Add font name]</strong>
+                                <span
+                                    class="ann3-type-abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</span>
+                            </div>
+                        </div>
+                        <div class="ann3-card-copy">
+                            <h3>Typography</h3>
+                            <p>Large headings and high-contrast layouts help key messages stay visible in busy public
+                                spaces, while a clear secondary typeface keeps supporting information easy to read on
+                                signage, sponsor placements and printed pieces.</p>
+                        </div>
+                    </article>
+
+                    <div class="ann3-palette reveal">
+                        <div class="ann3-palette-visual">
+                            <img src="https://www.socialsanta.in/images/Acolor.webp"
+                                alt="Annotsav event colour palette reference">
+                        </div>
+                        <div class="ann3-palette-copy">
+                            <h3>Festive red. Clean contrast.</h3>
+                            <p>A focused red, black and white palette gives the event a recognisable signature while
+                                keeping information clear.</p>
+                            <ul class="ann3-chips" aria-label="Event colour palette">
+                                <li><i style="background:#b5262c"></i>#B5262C</li>
+                                <li><i style="background:#201e1e"></i>#201E1E</li>
+                                <li><i style="background:#fefefe"></i>#FEFEFE</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="reveal">
+                    <h2 class="footer-title">Let's build something <span class="font-serif-italic text-primary">people
+                            trust.</span></h2>
+                </div>
+                <div class="footer-grid">
+                    <div>
+                        <p class="footer-brand">social<span class="text-primary">santa.</span></p>
+                        <p class="footer-note">360° marketing studio — Belagavi &amp; Mumbai.</p>
+                    </div>
+                    <div class="footer-col">
+                        <p class="footer-label">Pages</p>
+                        <a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">Work</a><a
+                            href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <p class="footer-label">Say hello</p>
+                        <a href="mailto:hello@socialsanta.studio">hello@socialsanta.studio</a>
+                        <a href="tel:+918792757839">+91 87927 57839</a>
+                    </div>
+                    <div class="footer-col">
+                        <p class="footer-label">Studios</p>
+                        <p>Belagavi</p>
+                        <p>Mumbai</p>
+                    </div>
+                </div>
+                <p class="footer-copy">© <span id="year">2026</span> Social Santa. Empowering businesses worldwide
+                    through
+                    creativity.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        /* switches the header back to dark text once you scroll past the hero */
+        (function () {
+            var h = document.querySelector(".site-header"), hero = document.getElementById("ann-hero");
+            if (!h || !hero) return;
+            function f() { h.classList.toggle("ann-past", hero.getBoundingClientRect().bottom <= h.offsetHeight); }
+            f();
+            window.addEventListener("scroll", f, { passive: true });
+            window.addEventListener("resize", f);
+        })();
+    </script>
+</body>
+
+</html>
