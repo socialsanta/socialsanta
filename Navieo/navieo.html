@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Navieo | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "AloeVera", sans-serif;
+      background: #0b0f14;
+      color: #eaeaea;
+      
+    }
+
+html, body {
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  background: transparent;
+  z-index: 10;
+}
+
+nav img {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* THREE DOTS WRAPPER */
+.menu-wrapper {
+  position: relative;
+}
+
+/* THREE DOTS BUTTON */
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.menu-btn:hover {
+  opacity: 1;
+}
+
+/* DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LINKS */
+.menu-dropdown a {
+  padding: 12px 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.menu-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7ec2ef;
+  opacity: 0.8;
+}
+
+/* SUBTLE SEPARATOR (optional) */
+.menu-dropdown a + a {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: url('../images/NBG.webp') center / cover no-repeat;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* TEXT */
+.info-wrapper {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  z-index: 2; /* above overlay */
+}
+
+.info-left h3 {
+  font-size: 24px;
+  color:white;
+  opacity: 0.5;
+  font-weight: bolder;
+  line-height: 2.3;
+  text-align: left;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.info-left span {
+  font-size: 20px;
+  color:white;
+  opacity: 0.5;
+  font-weight: 200;
+  line-height: 2.3;
+  text-align: left;
+}
+
+/* NAVIEO BAR */
+.box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0px 0;
+    margin: 0 100px 100px;
+    margin-bottom: 20px;
+
+}
+.box img {
+    width: 100%;
+    height: 400px;
+    display: block;
+    /* margin: 0 100px 100px; */
+
+}
+
+/* SECTION */
+.campaign {
+  padding: 80px 60px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* HEADER */
+.campaign-header h2 {
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+.campaign-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 60px;
+}
+
+.label {
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.campaign-meta h3 {
+  font-size: 32px;
+  margin-top: 6px;
+}
+
+.goal {
+  font-size: 20px;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+.meta-logo {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-top: 6px;
+}
+
+.meta-text {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+
+/* BODY */
+.campaign-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  margin-top: 80px;
+  align-items: center;
+}
+
+/* IMAGE */
+.campaign-image img {
+  width: 100%;
+  max-width: 520px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+/* STATS GRID */
+.campaign-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 720px;
+  margin-top: 40px;
+}
+
+/* common stat styles */
+.stat {
+  padding: 28px;
+}
+
+/* vertical divider (ONLY between columns) */
+.stat:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* horizontal divider (ONLY between rows) */
+.stat:nth-child(-n + 2) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* text styling */
+.stat span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #9a9a9a;
+}
+
+.stat h3 {
+  font-size: 36px;
+  margin-top: 8px;
+  color: #ff8a3d;
+}
+
+/* FOOTER DATA */
+.stats-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.stats-footer p {
+  margin-bottom: 6px;
+}
+
+.highlight {
+  color: #ff8a3d;
+  opacity: 1;
+}
+
+/* FOOTER */
+.stats-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+
+.stats-footer .highlight {
+  color: #ff8a3d;
+  margin-top: 6px;
+}
+
+
+/* MEDIA */
+.media{
+  display:flex;
+  padding:80px 8%;
+  gap:60px;
+}
+.media-text{
+  width:40%;
+}
+.media-text p{
+  opacity:.7;
+  margin:10px 0;
+  font-size: 19px;
+}
+.media-text h2{
+  font-size: 30px;
+  margin-top:30px;
+  color:white;
+}
+.media-text h3{
+  font-size: 30px;
+  margin-top:30px;
+  color:#f58b3c;
+}
+.media-grid{
+  width:60%;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.media-grid img{
+  width:100%;
+  border-radius:10px;
+  margin-left: 35px;
+  margin-top: -35px;
+}
+
+/* SERVICES */
+.services{
+  display:flex;
+  justify-content:space-around;
+  padding:80px 8%;
+  text-align:center;
+}
+.service-box img{
+  width:100px;
+  margin-bottom:15px;
+}
+.service-box p{
+  opacity:.8;
+  font-size: 18px;
+}
+
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+
+
+@media (min-width: 1440px) {
+  .campaign {
+    padding: 100px 120px;
+  }
+
+  .campaign-body {
+    gap: 80px;
+  }
+}
+@media (max-width: 1200px) {
+  nav {
+    padding: 20px 40px;
+  }
+
+  .campaign {
+    padding: 70px 60px;
+  }
+
+  .campaign-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .campaign-meta > div:last-child {
+    grid-column: span 2;
+  }
+
+  .campaign-body {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .campaign-image img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .hero {
+    height: 650px;
+  }
+
+  .info-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    left: 40px;
+    right: 40px;
+  }
+
+  .box {
+    margin: 0 40px 80px;
+  }
+
+  .campaign-body {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .campaign-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    max-width: 100%;
+  }
+
+  .stats-footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .media {
+    flex-direction: column;
+  }
+
+  .media-text,
+  .media-grid {
+    width: 100%;
+  }
+
+  .media-grid img {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 24px;
+  }
+
+  .campaign-header h2 {
+    font-size: 28px;
+  }
+
+  .campaign-meta {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .meta-text {
+    font-size: 22px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat h3 {
+    font-size: 28px;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 520px;
+  }
+
+  .info-wrapper {
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .info-left h3 {
+    font-size: 18px;
+  }
+
+  .info-left span {
+    font-size: 16px;
+  }
+
+  .box {
+    margin: 0 20px 60px;
+  }
+
+  .campaign {
+    padding: 60px 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* remove vertical divider */
+  .stat:nth-child(odd) {
+    border-right: none;
+  }
+
+  /* only horizontal dividers */
+  .stat {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .stat:last-child {
+    border-bottom: none;
+  }
+
+  .stat h3 {
+    font-size: 26px;
+  }
+
+  .media {
+    padding: 60px 20px;
+  }
+
+  .services {
+    padding: 60px 20px;
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 60px 20px;
+  }
+
+  .footer-left h1 {
+    font-size: 36px;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+ <nav>
+  <img src="../images/SSlogo.webp" alt="" srcset="">
+
+  <div class="menu-wrapper">
+    <button class="menu-btn" id="menuBtn">⋯</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="#home">Home</a>
+      <a href="#brand">Brand</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero" id="home">
+    <div class="info-wrapper">
+      <div class="info-left">
+        <h3>SERVICE:</h3>
+        <span>PERFORMANCE</span>
+        <h3>
+        </h3>
+        <h3>VISIT THEM:</h3>
+        <span>
+        <a href="https://www.navieo.com">
+          www.navieo.com
+        </a>
+      </span>
+    </div>
+    </div>
+  </section>
+
+<!-- NAVIEO -->
+<section class="navieo">
+ <div class="box">
+    <img src="../images/OrangeN.webp" alt="Navieo Logo">
+   </div>
+</section>
+
+<section class="campaign">
+
+  <!-- TOP INFO -->
+  <div class="campaign-header">
+    <h2>Campaign Overview</h2>
+
+    <div class="campaign-meta">
+      <div>
+        <span class="label">Duration</span>
+        <h3>90 Days</h3>
+      </div>
+
+      <div>
+        <span class="label">Platforms</span>
+        <div class="meta-logo">
+          <!-- META SVG -->
+          <svg width="90" viewBox="0 0 256 170" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.5 84.9C32.5 56.5 45.7 24 67.7 24C87.2 24 101.8 52.7 117.5 82.3C132.6 110.7 147.5 139.6 166.6 139.6C187.5 139.6 201.4 109.6 201.4 84.9C201.4 59.8 189.3 24 166.6 24C147.5 24 132.6 52.9 117.5 81.5C101.8 111.1 87.2 139.6 67.7 139.6C45.7 139.6 32.5 113.4 32.5 84.9Z"
+              stroke="#1877F2" stroke-width="18" fill="none"/>
+          </svg>
+
+           <span class="meta-text">Meta</span>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">Goal</span>
+        <p class="goal">
+          Online sales + brand discovery<br>
+          among nightlife audience
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="campaign-body">
+
+    <!-- LEFT IMAGE -->
+    <div class="campaign-image">
+      <img src="../images/models.webp" alt="Campaign Model">
+    </div>
+
+    <!-- RIGHT STATS -->
+    <div class="campaign-stats">
+
+      <div class="stats-grid">
+        <div class="stat">
+          <span>OVERALL REACH</span>
+          <h3>1.5M</h3>
+        </div>
+
+        <div class="stat">
+          <span>PROFILE VISITS</span>
+          <h3>20,540</h3>
+        </div>
+
+        <div class="stat">
+          <span>NEW FOLLOWERS</span>
+          <h3>1.5K</h3>
+        </div>
+
+        <div class="stat">
+          <span>WEBSITE TRAFFIC</span>
+          <h3>2,350</h3>
+        </div>
+      </div>
+
+      <!-- BOTTOM DATA -->
+      <div class="stats-footer">
+        <div>
+          <p>Spend: ₹2,40,000</p>
+          <p>Revenue: ₹10,90,000</p>
+          <p class="highlight">ROAS: 4.54×</p>
+        </div>
+
+        <div>
+          <p>Best Audience</p>
+          <p>18–28 Males</p>
+          <p class="highlight">CTR: 4.20% &nbsp; CPM: ₹142</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MEDIA -->
+<section class="media">
+  <div class="media-text">
+    <h2>Media Creatives</h2>
+    <p>
+      The objective was more than just
+      showing clothes.
+      We wanted to build a strong 
+      community of nightlife lovers that
+      goes beyond the feed.
+      We did this through curated content
+      a perfect mix of premium style and 
+      relatable moments.
+      And the Navieo family?
+      It’s growing, one night at a time.
+    </p>
+     <h3>18000+</h3>
+    <p>T-shirt</p>
+     <div class="media-grid">
+    <img src="../images/soldout.webp">
+  </div>
+ 
+  </div>
+
+  <div class="media-grid">
+    <img src="../images/NMockup1.webp">
+    <img src="../images/NMockup2.webp">
+    <img src="../images/NMockup3.webp">
+    <img src="../images/NMockup4.webp">
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="service-box">
+    <img src="../images/1.webp">
+    <p>Content Production</p>
+  </div>
+  <div class="service-box">
+    <img src="../images/2.webp">
+    <p>Social Media Marketing</p>
+  </div>
+  <div class="service-box">
+    <img src="../images/3.webp">
+    <p>Paid Ads Campaigns</p>
+  </div>
+  <div class="service-box">
+    <img src="../images/4.webp">
+    <p>Influencer Collab</p>
+  </div>
+</section>
+
+<!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  // Toggle menu on dots click
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    menuDropdown.style.display =
+      menuDropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Prevent closing when clicking inside menu
+  menuDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menuDropdown.style.display = "none";
+  });
+</script>
+
+</body>
+</html>

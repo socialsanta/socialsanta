@@ -1,0 +1,576 @@
+
+@font-face {
+     font-family: "AloeVeraLight";
+    src: url("./fonts/Aloevera-Light.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* AloeVera Bold for headings or special parts */
+@font-face {
+    font-family: "AloeVeraBold";
+    src: url("../fonts/AloeVera-Bold.otf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+}
+
+  body {
+    min-height: 100vh;
+    font-family: "AloeVeraLight", sans-serif;
+    /* background: radial-gradient(circle at top, #1b1340, #05010f 60%); */
+    background: #6C3BAA;
+    color: white;
+  }
+/* Loader screen */
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: #6C3BAA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 9999;
+  }
+
+  #loader img{
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  #loader p {
+    font-size: 28px;
+    color: #cbd5f5;
+    animation: fade 1.5s infinite;
+  }
+
+  @keyframes fade {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+
+/* .spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #cbd5f5;
+  border-top: 6px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+} */
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide main content initially */
+/* #content {
+  display: none;
+  padding: 40px;
+} */
+
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      /* max-width: 1100px; */
+      /* margin: 30px auto; */
+      padding: 26px 38px;
+      /* background: linear-gradient(90deg, #2b1b5a, #120a2e); */
+      border-bottom-left-radius: 45px;
+      border-bottom-right-radius: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding-left: 140px;
+      padding-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+      transition: all 0.35s ease;
+    }
+
+    nav.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    nav a.active {
+      background: white;
+      color: black;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    #navMenu{
+      gap: 30px;
+      margin-left: 50px;
+
+    }
+
+    /* #navMenu .Contact {
+      margin-left:300px;
+
+    } */
+
+    /* THREE DOTS */
+    .menu-dots {
+      display: flex;
+      align-items: center; /* fixed vertical alignment */
+      gap: 6px;
+      cursor: pointer;
+      padding-right: 140px;
+      padding-top: 10px;
+    }
+
+    .menu-dots span {
+      width: 11px;
+      height: 11px;
+      background: white;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .menu-dots span:first-child {
+      width: 11px;
+      height: 11px;
+      margin-bottom: 7px;
+      background: white;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* DEMO CONTENT */
+    .demo {
+      text-align: center;
+      margin-top: 150px;
+      opacity: 0.7;
+    }
+
+    .hero {
+      max-width: 1900px;
+      margin: 20px ;
+      display: grid;
+      grid-template-columns: 0.6fr 1.4fr;
+      align-items: center;
+      gap: 0px;
+      margin-left: 180px;
+      margin-top: -50px;
+    }
+    .hero h1 {
+      font-size: 60px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      text-align: left;
+      font-weight: 800;
+      font-family: "AloeVeraBold", sans-serif;
+      /* letter-spacing:0.7px ; */
+    }
+    .hero p {
+      font-size: 20px;
+      color: #bdb7f3;
+      max-width: 380px;
+      margin-bottom: 28px;
+    }
+
+    button{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .buttons button {
+      padding: 12px 26px;
+      /* border-radius: 25px; */
+      border: 3px solid #fff;
+      background: transparent;
+      color: #fff;
+      margin-right: 14px;
+      cursor: pointer;
+    }
+    .buttons .primary {
+      background: #fff;
+      color:#6C3BAA;
+      border: 3px solid #fff;
+  
+    }
+    .hero img {
+      width: 100%;
+      max-width: 700px;
+      filter: drop-shadow(0 0 40px rgba(138,92,255,.6));
+      margin-left: 200px;
+      padding-top: 30px;
+    }
+
+.testimonial-section {
+  background: #fff;
+  padding: 80px 8%;
+  /* min-width: 1200px; */
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 210px;
+  align-items: center;
+}
+
+.testimonial-left {
+  flex: 1;
+  min-width: 600px;
+  margin-top: -60px;
+}
+
+.small-text {
+  color:#626262;
+  font-size:27px;
+  line-height: 1.5;
+  margin-right: 45px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.testimonial-right {
+  flex: 2;
+  min-width: 300px;
+  position: relative;
+}
+
+.quote-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.quote-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color:#626262 ;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  font-family: 'AloeVeraLight', sans-serif;
+}
+
+.testimonial-desc {
+  font-size: 22px;
+  color: #6B6B6B;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.rating {
+  font-size: 18px;
+  color: #999;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #6B6B6B;
+  opacity: 0.8;
+}
+
+/* ================= CLIENTS ================= */
+
+.clients-section {
+  background: white;
+  text-align: center;
+  padding: 80px ;
+}
+
+.section-title {
+  font-size: 40px;
+  margin-bottom: 90px;
+  font-weight: 600;
+  color: #6B6B6B;;
+}
+
+.clients-logos {
+  margin-bottom: 90px;
+  max-width: 1200px;
+  opacity: 0.9;
+  transition: transform 1.9s ease, opacity 0.6s ease;
+  display: block; 
+}
+
+.clients-logos img{
+  margin-left: 100px;
+}
+
+.clients-logos img:hover {
+  opacity: 1;
+  transform: scale(1.07);
+}
+
+.clients-desc {
+  max-width: 1200px;
+  margin: auto;
+  color: #626262;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+
+}
+
+
+/* ================= CTA SECTION ================= */
+
+.cta-section {
+  background: #6C3BAA;
+  color: white;
+  padding: 70px 10%;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta-left h2 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 23px;
+}
+
+.cta-right p {
+  margin-bottom: 0px;
+  font-size: 19px;
+  text-align: right;
+}
+
+.divider1 {
+    width: 100%;
+    margin:160px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;  /* pushes icons to right */
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.social-icons a img {
+  width: 30px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.navbar{
+  padding:20px;
+}
+
+.logo{
+  padding-left:20px;
+}
+
+.menu-dots{
+  padding-right:20px;
+}
+
+#navMenu{
+  gap:15px;
+  margin-left:0;
+}
+
+.hero h1{
+  font-size:38px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+.hero img{
+  max-width:350px;
+}
+
+.small-text{
+  font-size:20px;
+}
+
+.quote-content h2{
+  font-size:28px;
+}
+
+.testimonial-desc{
+  font-size:18px;
+}
+
+.section-title{
+  font-size:32px;
+}
+
+.clients-desc{
+  font-size:16px;
+}
+
+.cta-left h2{
+  font-size:32px;
+}
+
+.cta-right p{
+  text-align:center;
+}
+
+.social-icons{
+  justify-content:center;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero h1{
+  font-size:30px;
+}
+
+.hero p{
+  font-size:16px;
+}
+
+.buttons button{
+  padding:10px 18px;
+  font-size:16px;
+}
+
+.hero img{
+  max-width:260px;
+}
+
+.quote-content h2{
+  font-size:24px;
+}
+
+.small-text{
+  font-size:18px;
+}
+
+.section-title{
+  font-size:26px;
+}
+
+}
+
+@media (max-width:1200px){
+
+.hero{
+  margin-left:80px;
+  grid-template-columns:1fr 1fr;
+}
+
+.hero img{
+  max-width:500px;
+  margin-left:80px;
+}
+
+.logo{
+  padding-left:80px;
+}
+
+.menu-dots{
+  padding-right:80px;
+}
+
+.testimonial-section{
+  min-width:100%;
+}
+
+.testimonial-left{
+  min-width:auto;
+}
+
+}
+
+@media (max-width:992px){
+
+.hero{
+  grid-template-columns:1fr;
+  text-align:center;
+  margin-left:0;
+  gap:40px;
+}
+
+.hero h1{
+  font-size:46px;
+}
+
+.hero p{
+  margin:auto;
+}
+
+.hero img{
+  margin:auto;
+  max-width:450px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+}
+
+.testimonial-container{
+  flex-direction:column;
+  gap:40px;
+}
+
+.testimonial-left{
+  margin-top:0;
+  text-align:center;
+}
+
+.quote-row{
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.clients-logos img{
+  margin-left:0;
+  width:90%;
+}
+
+}

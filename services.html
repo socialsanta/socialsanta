@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Services Section</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+  @font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+      font-family: "AloeVera", sans-serif;
+      background:#6e3bb5;
+      color:black;
+}
+
+.navbar {
+      width: 100%;
+      /* max-width: 1100px; */
+      /* margin: 30px auto; */
+      padding: 26px 38px;
+      /* background: linear-gradient(90deg, #2b1b5a, #120a2e); */
+      border-bottom-left-radius: 45px;
+      border-bottom-right-radius: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding-left: 140px;
+      padding-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+      transition: all 0.35s ease;
+    }
+
+    nav.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    nav a.active {
+      background: white;
+      color: black;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    #navMenu{
+      gap: 30px;
+      margin-left: 50px;
+
+    }
+
+    /* #navMenu .Contact {
+      margin-left:300px;
+
+    } */
+
+    /* THREE DOTS */
+    .menu-dots {
+      display: flex;
+      align-items: center; /* fixed vertical alignment */
+      gap: 6px;
+      cursor: pointer;
+      padding-right: 140px;
+      padding-top: 10px;
+    }
+
+    .menu-dots span {
+      width: 11px;
+      height: 11px;
+      background: white;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .menu-dots span:first-child {
+      width: 11px;
+      height: 11px;
+      margin-bottom: 7px;
+      background: white;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* DEMO CONTENT */
+    .demo {
+      text-align: center;
+      margin-top: 150px;
+      opacity: 0.7;
+    }
+
+.services {
+  background: #6e3bb5;
+  padding: 70px 80px;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  color: #fff;
+  font-size: 38px;
+  margin-bottom: 90px;
+  margin-left: 150px;
+}
+
+/* LAYOUT */
+.services-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+.left-side {
+  width: 200px;
+  position: relative;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  gap: 40px;
+  color: rgba(255,255,255);
+  font-size: 16px;
+  margin-left: -45px;
+}
+
+/* Decorative outline */
+.shape {
+  position: absolute;
+  padding-left: 30px;
+  top: 20px;
+  width: 180px;
+  height: 290px;
+  /* border: 2px solid rgba(255,255,255,0.2); */
+  /* border-radius: 20px; */
+  /* transform: rotate(15deg); */
+}
+
+/* SLIDER */
+.slider-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: -30px;
+}
+
+.services-slider {
+  display: flex;
+  gap: 60px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+/* CARD */
+.service-card {
+  min-width: 300px;
+  color: white;
+
+  opacity: 0;
+  transform: translateY(120px);
+  transition: all 1.2s ease;   /* slower animation */
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card h3 {
+  margin-bottom: 5px;
+  font-size: 32px;
+}
+
+.service-card h5 {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.service-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e5dbff;
+}
+
+/* --- SLIDER PAGINATION SYSTEM --- */
+
+.services-track {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+}
+
+/* hide all cards by default */
+.service-card {
+  display: none;
+}
+
+/* visible cards */
+.service-card.active {
+  display: block;
+}
+
+/* arrow position fix */
+.arrow-controls{
+  position:absolute;
+  bottom:-80px;
+  right:0;
+}
+
+
+/* Bottom Right Arrows */
+/* .arrow-controls {
+  position: relative;
+  top: 170px;
+  right: 150px;
+  display: flex;
+  gap: 15px;
+} */
+
+.arrow {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  font-size: 18px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 30px;
+
+}
+
+.arrow:hover {
+  background: white;
+  color: #6e3bb5;
+}
+
+.weare{
+  position: absolute;
+  bottom: 30px;
+  left: 250px;
+}
+
+.know-more-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(110, 59, 181, 0.5);
+  /* bacopacity: 0.5; */
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 30px;
+}
+
+</style>
+<body>
+
+<!-- MAIN CONTENT -->
+  <header class="navbar">
+    <div class="logo"><img src="./images/SSlogo.webp" alt="" srcset=""></div>
+
+    <nav id="navMenu">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./services.html">Services</a>
+      <a href="./navbar/work.html">Works</a>
+      <a href="./aboutUs.html">About us</a>
+      <a class="Contact">Contact us</a>
+    </nav>
+
+    <div class="menu-dots" id="menuBtn">
+      <span class="first"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+
+<section class="services">
+
+  <h2 class="title">SERVICES</h2>
+
+  <div class="services-wrapper">
+
+    <!-- LEFT SIDE -->
+    <div class="left-side">
+      <div class="vertical-text">
+        <span>DIGITAL MARKETING</span>
+        <span>DESIGNING</span>
+        <span>DEVELOPMENT</span>
+      </div>
+
+      <!-- Decorative Shape -->
+      <div class="shape">
+        <img src="./images/SS.webp" alt="" srcset="">
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE SLIDER -->
+    <div class="slider-container">
+
+      <div class="services-slider services-track">
+
+        <div class="service-card" data-category="social-media">
+          <h3>Production</h3>
+          <h5>(Photos & Videos)</h5>
+
+          <p>
+            We don’t just shoot content; we craft visual 
+            experiences that sell your story. Every photo
+             and every frame is designed to make your 
+             audience stop, watch, and remember. 
+             Whether it’s product launches or brand 
+             films, our visuals bring your brand to 
+             life and drive real results.
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+        <div class="service-card" data-category="social-media">
+          <h3>Influencer</h3>
+          <h5>Marketing</h5>
+          <p>
+            We connect your brand with the right people,
+             not just popular ones. Our influencer are 
+             designed to build trust, spark buzz, and 
+             create conversations that convert. 
+             With the right collaborations, your brand 
+             becomes a name people notice and talk about.
+
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+        <div class="service-card" data-category="social-media">
+          <h3>Branding & Packaging</h3>
+          <h5> Design</h5>
+          <p>
+            Your brand deserves an identity that speaks 
+            before you do. We design logos, packaging, 
+            and brand visuals that instantly attract 
+            attention and stay in memory. Every element 
+            we create tells your story with clarity, 
+            creativity, and purpose, making your brand 
+            unforgettable.
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+        <div class="service-card" data-category="social-media">
+          <h3>Social Media </h3>
+          <h5>Management</h5>
+          <p>
+            Your social media shouldn’t just exist; it 
+            should perform. We plan, create, and manage 
+            everything your brand needs to grow online. 
+            From trend-driven content to strong 
+            storytelling, we make your pages engaging, 
+            consistent, and ready to convert followers 
+            into loyal fans.
+
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+        <div class="service-card" data-category="social-media">
+          <h3>Digital Design </h3>
+          <h5>Services</h5>
+          <p>
+            Good design gets noticed. Great design gets 
+            results. We create digital designs that make 
+            people stop scrolling and start engaging. 
+            From ad creatives to campaign visuals, every 
+            piece we design adds value to your brand and 
+            turns ideas into impact.
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+        <div class="service-card" data-category="social-media">
+          <h3>Print & Offline </h3>
+          <h5>Marketing</h5>
+          <p>
+            We make sure your brand stands out everywhere,
+            not just online. From brochures to billboards, 
+            our offline marketing designs are bold, beautiful,
+            and built to catch attention. Every print 
+            material we create works as a strong, lasting 
+            brand statement.
+
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+        <div class="service-card" data-category="social-media">
+          <h3>Performance </h3>
+          <h5>Marketing (Ads)</h5>
+          <p>
+            We turn clicks into conversions. Our 
+            performance marketing strategies are built 
+            to get your brand seen by the right audience 
+            and drive measurable growth. From ad planning 
+            to optimization, we focus on results that speak 
+            for themselves: more reach, more leads, more 
+            sales.
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+
+
+        <div class="service-card" data-category="social-media">
+          <h3>Web Development</h3>
+          <h5>(UX/UI)</h5>
+          <p>
+            Your website is your brand’s first impression, 
+            and we make it unforgettable. With smart UX 
+            and stunning design, we build websites that 
+            look professional, load fast, and convert 
+            visitors into customers. Seamless, functional, 
+            and beautiful that’s how your brand deserves 
+            to be online.
+
+          </p>
+          <button class="know-more-btn">Know More</button>
+
+        </div>
+      </div>
+
+      <!-- ARROWS (bottom right) -->
+<div class="arrow-controls">
+  <button class="arrow left">&#8592;</button>
+  <button class="arrow right">&#8594;</button>
+</div>
+
+    </div>
+  </div>
+
+  <div class="weare">
+    <img src="./images/we are.webp" alt="" srcset="">
+  </div>
+</section>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    // Toggle menu visibility
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+
+    // Active state handling for nav links
+    const navLinks = navMenu.querySelectorAll("a");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  </script>
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  // const content = document.getElementById("content");
+
+  // Optional delay for smooth effect
+  setTimeout(() => {
+    loader.style.display = "none";
+    content.style.display = "block";
+  }, 1500); // 1.5 seconds
+});
+</script>
+
+<script >
+    /* =========================
+   ONE BY ONE SLOW FLY IN
+========================= */
+
+const cards = document.querySelectorAll(".service-card");
+
+function animateCardsSequentially() {
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 400); // delay between cards
+  });
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      animateCardsSequentially();
+    }
+  },
+  { threshold: 0.4 }
+);
+
+observer.observe(document.querySelector(".services"));
+
+
+
+/* =========================
+   3 CARD GROUP SLIDER
+========================= */
+
+const allCards = document.querySelectorAll(".service-card");
+const nextBtn = document.querySelector(".arrow.right");
+const prevBtn = document.querySelector(".arrow.left");
+
+let page = 0;
+const cardsPerPage = 3;
+
+/* function to show cards based on page */
+function showCards() {
+
+  // hide all
+  allCards.forEach(card => card.classList.remove("active"));
+
+  // calculate start & end
+  const start = page * cardsPerPage;
+  const end = start + cardsPerPage;
+
+  // show only selected group
+  for (let i = start; i < end && i < allCards.length; i++) {
+    allCards[i].classList.add("active");
+  }
+
+  // arrow visibility
+  prevBtn.style.display = page === 0 ? "none" : "inline-block";
+  nextBtn.style.display =
+    end >= allCards.length ? "none" : "inline-block";
+}
+
+/* next button */
+nextBtn.addEventListener("click", () => {
+  page++;
+  showCards();
+});
+
+/* previous button */
+prevBtn.addEventListener("click", () => {
+  page--;
+  showCards();
+});
+
+/* INITIAL LOAD */
+showCards();
+
+
+</script>
+</body>
+</html>

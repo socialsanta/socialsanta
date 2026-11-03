@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMD | Home</title>
+</head>
+<style>
+@font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "AloeVera", sans-serif;
+      background: #0b0f14;
+      color: #eaeaea;
+      
+    }
+
+html, body {
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  background: transparent;
+  z-index: 10;
+}
+
+nav img {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* THREE DOTS WRAPPER */
+.menu-wrapper {
+  position: relative;
+}
+
+/* THREE DOTS BUTTON */
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.menu-btn:hover {
+  opacity: 1;
+}
+
+/* DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LINKS */
+.menu-dropdown a {
+  padding: 12px 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.menu-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7ec2ef;
+  opacity: 0.8;
+}
+
+/* SUBTLE SEPARATOR (optional) */
+.menu-dropdown a + a {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -80px; /* pull hero up behind navbar */
+  padding-top: 80px; /* compensate height */
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or cover if you prefer */
+  display: block;
+}
+
+/* TEXT */
+.info-wrapper {
+  position: absolute;
+  bottom: 60px;
+  padding-left: 27px;
+  left: 60px;
+
+  display: flex;
+  gap: 80px; /* space between SERVICE and VISIT */
+  align-items: flex-end;
+
+  z-index: 2;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column; /* keeps span below h3 */
+}
+
+
+.info-block h3 {
+  font-size: 24px;
+  color:rgb(248, 211, 163);
+  opacity: 0.5;
+  font-weight: bolder;
+  line-height: -3.3;
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+.info-block span {
+  font-size: 20px;
+  color:rgb(248, 211, 163);
+
+  opacity: 0.5;
+  font-weight: 200;
+  /* line-height: 2.3; */
+  text-align: left;
+}
+
+.page {
+  padding: 80px 80px;
+  background: #000;
+}
+.card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.cardtext {
+    padding-top: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
+  letter-spacing: 0.8px;
+  word-spacing: 3px;
+  margin-bottom: 60px;
+}
+.cardtext h3 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 35px;
+  font-weight: 700;
+}
+.cardtext p {
+  font-size: 20px;
+  opacity: 2.0;
+  font-weight: 400;
+  line-height: 1.3;
+  color: rgb(130, 136, 142);
+}
+.cardtext .location {
+  margin-top:70px;
+  font-size: 20px;
+  color: rgb(130, 136, 142);
+  opacity: 0.8;
+  font-weight: bolder;
+}
+.cardtext1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  padding-top: 70px;
+  padding-bottom: 35px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.brand img {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 45%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+
+/* Zoom In */
+.brand:hover img {
+  transform: scale(1.08);
+}
+
+/* Bottom Shading */
+.brand img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  /* background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    transparent
+  ); */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Show shading on hover */
+.brand img:hover::after {
+  opacity: 1;
+}
+
+.container {
+  width: 80%;
+  padding-top: 100px;
+  margin: auto;
+  gap: 0px;
+}
+
+/* TOP ROW */
+
+.brand-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  max-width: 700px;
+  line-height: 1.3;
+
+}
+
+/* LEFT SIDE */
+.brand-label {
+  font-size: 18px;
+  color: #bfbfbf;
+  margin-bottom: 10px;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* RIGHT SIDE */
+
+.brand-right p {
+  /* margin: 8px 0; */
+  font-size:20px;
+  color: rgb(130, 136, 142);
+
+}
+
+/* PARAGRAPH BELOW */
+
+.brand-description {
+  max-width: 1150px;
+  padding-left: 140px;
+}
+
+.brand-description p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgb(130, 136, 142);
+}
+
+.color-section {
+  /* padding: 100px 0; */
+  background: #000000;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  max-width: 1100px;
+}
+
+.section-title {
+  text-align: left;
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+  font-weight: 400;
+  color: #ffffff;
+
+}
+
+.color-grid {
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 130px;
+  margin-bottom: 140px;
+  color: rgb(130, 136, 142);
+
+}
+
+.color-item h3 {
+  font-size: 20px;
+  margin-bottom: 35px;
+  font-weight: 500;
+}
+
+.color-item p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgb(130, 136, 142);
+  
+}
+
+.brand-title {
+  text-align: left;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: rgb(130, 136, 142);
+}
+
+.LogoOptions {
+  padding-top: 100px;
+  width: 80%;
+  max-width: 900px;
+  display: block;
+  margin: auto; 
+}
+
+.typography-section {
+  background: #000;
+  padding: 10px 0;
+  max-width: -900px;
+}
+
+.logo-preview img {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 70%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+
+/* Zoom In */
+.logo-preview:hover img {
+  transform: scale(1.08);
+}
+
+/* Bottom Shading */
+.logo-preview img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  /* background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    transparent
+  ); */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Show shading on hover */
+.logo-preview:hover::after {
+  opacity: 1;
+}
+
+.section-heading {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Logo Row */
+.logo-row {
+  display: flex;
+  justify-content:baseline;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo-preview img {
+  /* max-width: 300px; */
+  margin-left: 200px;
+}
+
+/* Marathi Section */
+.marathi-copy {
+  max-width: 1100px;
+  margin-bottom: 80px;
+}
+
+.label {
+  font-size: 18px;
+  color: rgb(130, 136, 142);
+  margin-bottom: 5px;
+}
+
+.font-name {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.marathi-text {
+    margin-top: 40px;
+  font-size: 20px;
+  line-height: 1.8;
+  color:white
+}
+
+/* Font Columns */
+
+.font-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.font-box {
+  width: 45%;
+}
+
+.alphabet {
+  color: rgb(130, 136, 142);
+  line-height: 1.8;
+}
+
+/* Divider */
+
+.divider {
+    width: 100%;
+    margin: 60px 0;
+}
+
+/* Packaging */
+
+.section-heading1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.packaging-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  /* margin-top: -10px; */
+  /* margin-bottom: 60px; */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.packaging-row img {
+  margin-top: 10px;
+  width: 90%;
+  display: block;
+  transition: transform 0.5s ease;
+  border-radius: 90px;
+}
+
+/* Zoom In */
+.packaging-row:hover img {
+  transform: scale(1.08);
+}
+
+/* Bottom Shading */
+.packaging-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  /* background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    transparent
+  ); */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Show shading on hover */
+.packaging-row:hover::after {
+  opacity: 1;
+}
+
+
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+@media (max-width:1200px){
+
+  nav{
+    padding:20px 40px;
+  }
+
+  .page{
+    padding:70px 50px;
+  }
+
+  .cardtext{
+    padding-left:60px;
+    padding-right:60px;
+  }
+
+  .brand-description{
+    padding-left:40px;
+  }
+
+  .logo-preview img{
+    margin-left:80px;
+  }
+}
+
+@media (max-width:992px){
+
+  .hero{
+    height:80vh;
+  }
+
+  .info-wrapper{
+    flex-direction:column;
+    gap:18px;
+    left:40px;
+    bottom:40px;
+  }
+
+  .brand-top{
+    flex-direction:column;
+    gap:25px;
+  }
+
+  .brand-description{
+    padding-left:0;
+  }
+
+  .color-grid{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+  .font-columns{
+    flex-direction:column;
+    gap:50px;
+  }
+
+  .logo-row{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .logo-preview img{
+    margin-left:0;
+    width:60%;
+  }
+
+  .footer-top{
+    flex-direction:column;
+    gap:60px;
+  }
+
+  .footer-right{
+    flex-wrap:wrap;
+    gap:40px;
+  }
+}
+
+
+@media (max-width:768px){
+
+  nav{
+    padding:16px 24px;
+  }
+
+  nav img{
+    width:120px;
+  }
+
+  .hero{
+    height:70vh;
+  }
+
+  .info-block h3{
+    font-size:18px;
+  }
+
+  .info-block span{
+    font-size:15px;
+  }
+
+  .page{
+    padding:60px 25px;
+  }
+
+  .cardtext{
+    padding:30px 10px;
+  }
+
+  .cardtext h3{
+    font-size:26px;
+  }
+
+  .cardtext p{
+    font-size:16px;
+  }
+
+  .brand img{
+    width:80%;
+  }
+
+  .brand-right p{
+    font-size:16px;
+  }
+
+  .brand-description p{
+    font-size:16px;
+  }
+
+  .marathi-text{
+    font-size:16px;
+  }
+
+  .alphabet{
+    font-size:14px;
+  }
+
+  .packaging-row{
+    gap:20px;
+  }
+
+  .packaging-row img{
+    width:100%;
+    border-radius:20px;
+  }
+
+  .footer{
+    padding:60px 30px 20px;
+  }
+
+  .footer-heading{
+    font-size:38px;
+  }
+}
+
+@media (max-width:480px){
+
+  nav{
+    padding:14px 18px;
+  }
+
+  .hero{
+    height:60vh;
+  }
+
+  .info-wrapper{
+    left:18px;
+    bottom:28px;
+  }
+
+  .info-block h3{
+    font-size:14px;
+  }
+
+  .info-block span{
+    font-size:13px;
+  }
+
+  .cardtext h3{
+    font-size:22px;
+  }
+
+  .cardtext p{
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  .brand-label{
+    font-size:14px;
+  }
+
+  .brand-title{
+    font-size:18px;
+  }
+
+  .section-title{
+    font-size:18px;
+  }
+
+  .section-heading{
+    font-size:18px;
+  }
+
+  .marathi-text{
+    font-size:14px;
+  }
+
+  .footer{
+    padding:50px 20px 20px;
+  }
+
+  .footer-heading{
+    font-size:28px;
+  }
+
+  .footer-links-small{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .brand{
+    font-size:14px;
+  }
+}
+
+*{
+  max-width:100%;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+
+</style>
+<body>
+    <nav>
+  <img src="../images/SSlogo.webp" alt="" srcset="">
+
+  <div class="menu-wrapper">
+    <button class="menu-btn" id="menuBtn">⋯</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="#home">Home</a>
+      <a href="#brand">Brand</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero" id="home">
+    <img src="../images/ABG.webp" class="hero-img" alt="">
+    <div class="info-wrapper">
+
+  <div class="info-block">
+    <h3>SERVICE:</h3>
+    <span>BRANDING</span>
+  </div>
+
+  <div class="info-block">
+    <h3>VISIT THEM:</h3>
+    <span>
+      <a href="https://www.amdkolhapur.com">
+        www.amdkolhapur.com
+      </a>
+    </span>
+  </div>
+</div>
+  </section>
+  <section class="page" id="brand">
+    <div class="card">
+      <img src="../images/Apage2.webp" alt="Logo Design" />
+    </div>
+    <div class="cardtext">
+        <h3>Logo Design</h3>
+        <p >
+          When Asal Mawla Darbar came to us, it wasn’t 
+          just another restaurant project. It was a story 
+          waiting to be plated. We built the brand from scratch, 
+          from a logo that captured Maratha pride to a visual 
+          identity rooted in earthy, royal tones. Our team 
+          shaped social media that felt like an extension of the 
+          thali itself bold, traditional, and proudly Maharashtrian. 
+          Every frame from the shoot to the final post carried that raw, warrior energy.
+        </p>
+        
+        <p class="location">Location:</p>
+        <p>Kolhapur, Maharashtra</p>
+    </div>
+    <div class="brand">   
+        <h3 class="cardtext1">BRAND LOGO</h3>
+        <img src="../images/ALogoOrange.webp" alt="" srcset="">
+      </div>
+
+    <div class="container">
+
+    <div class="brand-top">
+
+      <!-- LEFT SIDE -->
+      <div class="brand-left">
+        <p class="brand-label">Brand Name:</p>
+        <h2 class="brand-title">Assal Mawala Darbar</h2>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="brand-right">
+        <p>"Assal" = Authentic</p>
+        <p>"Mawala" = Warrior of Shivaji Maharaj</p>
+        <p>"Darbar" = Royal court</p>
+      </div>
+
+    </div>
+  </div>
+  
+    <!-- PARAGRAPH BELOW -->
+    <div class="brand-description">
+      <p>
+        Assal Mawala Darbar is a thali-based restaurant rooted in Kolhapur’s
+        warrior heritage. It specializes in authentic Kolhapuri mutton thalis,
+        prepared using traditional, time-honored methods. The brand celebrates
+        Maratha pride.
+      </p>
+    </div>
+    </section>
+
+    <section class="color-section">
+  <div class="container">
+
+    <h2 class="section-title">COLOR PALETTE</h2>
+
+    <div class="color-grid">
+      <div class="color-item">
+        <h3>Deep Maroon (Primary)</h3>
+        <p>
+          Represents richness, bold flavors, and royal heritage. Perfect for branding 
+          a mutton thali restaurant rooted in Kolhapur's fierce traditions.
+        </p>
+      </div>
+
+      <div class="color-item">
+        <h3>Mustard Yellow (Accent)</h3>
+        <p>
+          Symbolizes spice, warmth, and festivity. It 
+          reflects turmeric & other traditional ingredients used in your cuisine.
+        </p>
+      </div>
+
+      <div class="color-item">
+        <h3>Creamy Beige</h3>
+        <p>
+          A warm, soft neutral that serves as a calming backdrop ideal 
+          for website backgrounds, menus, social media posts, or printed materials. 
+          It keeps designs light and eye friendly, 
+          while maintaining the brand's rooted elegance.
+        </p>
+      </div>
+
+      <div class="color-item">
+        <h3>Charcoal Brown</h3>
+        <p>
+          Grounded, earthy, and versatile - this brown anchors the visual identity with richness. 
+          Perfect for body text, overlays, and subtle borders or dividers.
+           Works harmoniously with the creamy base to create timeless, rustic compositions
+        </p>
+      </div>
+    </div>
+
+    <h4 class="brand-title">PRIMARY BRAND COLORS (LOGO USE ONLY)</h4>
+
+    <img src="../images/AColorP.webp" alt="" srcset="">
+    <img src="../images/ALogoOptions1.webp" alt="" class="LogoOptions">
+    <img src="../images/ADivider.webp" alt="" srcset="" class="divider">
+
+  </div>
+</section>
+
+<section class="typography-section">
+  <div class="container">
+
+    <h2 class="section-heading">TYPOGRAPHY</h2>
+
+    <!-- Logo Font Row -->
+    <div class="logo-row">
+      <div class="logo-text">
+        <p class="label">Logo font - Mathan AMD</p>
+      </div>
+
+      <div class="logo-preview">
+        <img src="../images/ALogo.webp" alt="Logo">
+      </div>
+    </div>
+
+    <!-- Marathi Copy -->
+    <div class="marathi-copy">
+      <p class="label">Marathi Copy font</p>
+      <p class="font-name">Martel</p>
+
+      <p class="marathi-text">
+        छत्रपती शिवरायांनी स्थापन केलेल्या मराठी साम्राज्याचा विस्तार अटकेपार करताना अनेक मावळे धारातीर्थी पडले.
+        सह्याद्रीच्या गडकिल्ल्यावरील बुरुजांसारखी अभेद्य निष्ठा असलेल्या मावळ्यांनी महाराजांवरील श्रध्दा आणि स्वराज्यप्रेमापोटी जीवाची पर्वा केली नाही.
+        त्यांचे बलिदान, पराक्रम स्वराज्यासाठीचा त्याग आजही सर्वासाठी स्फुर्तीदायक आहे.जय भवानी !! जय शिवाजी !!
+      </p>
+    </div>
+
+    <!-- Heading & Subheading Fonts -->
+    <div class="font-columns">
+
+      <div class="font-box">
+        <p class="label">Heading font</p>
+        <h3 class="font-name">FUTURA</h3>
+        <p class="alphabet">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+          abcdefghijklmnopqrstuvwxyz<br>
+          1234567890
+        </p>
+      </div>
+
+      <div class="font-box">
+        <p class="label">Sub heading font</p>
+        <h3 class="font-name">HELVETICA</h3>
+        <p class="alphabet">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+          abcdefghijklmnopqrstuvwxyz<br>
+          1234567890
+        </p>
+      </div>
+
+    </div>
+
+    <img src="../images/ADivider.webp" alt="" srcset="" class="divider">
+
+    <!-- Packaging Section -->
+    <h2 class="section-heading1">PACKAGING</h2>
+
+    <div class="packaging-row">
+      <img src="../images/amd.webp" alt="Packaging 1">
+    </div>
+
+    <img src="../images/ADivider.webp" alt="" srcset="" class="divider">
+
+    <h2 class="section-heading1">STATIONARY DESIGN</h2>
+
+    <div class="packaging-row">
+      <img src="../images/ATemplates.webp" alt="Packaging 2">
+    </div>
+
+    <img src="../images/ADivider.webp" alt="" srcset="" class="divider">
+
+    <h2 class="section-heading1">MENU DESIGN</h2>
+
+    <div class="packaging-row">
+      <img src="../images/AMD Menu Mockup 01.webp" alt="Packaging 2">
+    </div>
+    
+
+  </div>
+</section>
+<!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  // Toggle menu on dots click
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    menuDropdown.style.display =
+      menuDropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Prevent closing when clicking inside menu
+  menuDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menuDropdown.style.display = "none";
+  });
+</script>
+    
+</body>
+</html>

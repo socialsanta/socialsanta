@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotsav | Home</title>
+</head>
+<style>
+    @font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+      font-family: "AloeVera", sans-serif;
+      background:white;
+      color:black;
+}
+
+a { color: inherit; text-decoration: none; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  background: black
+;
+  z-index: 10;
+  color: black;
+}
+
+nav img {
+  font-size: 18px;
+  letter-spacing: 2px;
+  /* color: white; */
+}
+
+/* THREE DOTS WRAPPER */
+.menu-wrapper {
+  position: relative;
+}
+
+/* THREE DOTS BUTTON */
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color:white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.menu-btn:hover {
+  opacity: 1;
+}
+
+/* DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LINKS */
+.menu-dropdown a {
+  padding: 12px 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.menu-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7ec2ef;
+  opacity: 0.8;
+}
+
+/* SUBTLE SEPARATOR (optional) */
+.menu-dropdown a + a {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* HERO PAGE */
+.hero{
+  position: relative;
+  width: 100%;
+  height: 100vh;          /* full screen height */
+  min-height: 650px;      /* prevents too small on laptops */
+
+  background-image: url('../images/AnBG.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* DARK OVERLAY */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+  z-index:1;
+}
+
+
+.showcase-section{
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.content-wrapper{
+  /* max-width: 1200px; */
+  margin: auto;
+  /* padding: 100px 40px 0 40px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.left-content{
+  max-width: 850px;
+  padding-left: 200px;
+  padding-bottom: 80px;
+}
+
+.small-text{
+  font-size: 26px;
+  color: #444;
+}
+
+.left-content h2{
+  font-size: 35px;
+  margin: 10px 0 30px 0;
+  font-weight: 500;
+}
+
+.client-text{
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.logo-img{
+  width: 220px;
+}
+
+/* RIGHT SIDE IMAGE */
+.right-hoarding img{
+  height: 750px;
+  width: 100%;
+  max-width: 850px;
+  padding-right: 40px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+}
+
+.grey-strip img{
+  width:100%;
+  display:block;
+  margin-top:-90px;
+}
+
+
+/* ================= OVERVIEW ================= */
+.overview{
+  max-width:2400px;
+  margin:100px;
+}
+
+.section1{
+  max-width: 1300px;
+}
+.section1 h3{
+  font-size:35px;
+  margin-bottom:30px;
+}
+
+.section1 p{
+  font-size:20px;
+  line-height:1.5;
+  letter-spacing: 1px;
+  margin-bottom:20px;
+}
+
+.section2 p{
+  max-width: 650px;
+  font-size:20px;
+  line-height:1.5;
+  letter-spacing: 1px;
+  margin-top: 120px;
+}
+
+/* ================= IMAGE GRID ================= */
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:40px;
+}
+
+.image-grid img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:6px;
+}
+
+
+/* ================= FULL WIDTH IMAGE ================= */
+.full-banner img{
+  width:100%;
+  display:block;
+}
+
+/* ================= CONTENT ================= */
+.container{
+  max-width:950px;
+  margin-top: 90px;
+  margin-left: 120px;
+  padding:0 20px;
+}
+
+.text-section h3{
+  font-size:35px;
+  margin-bottom:25px;
+}
+
+.text-section p{
+  font-size:20px;
+  line-height:1.5;
+  margin-bottom:25px;
+  letter-spacing: 1px;
+  color: #6F6F6F;
+}
+.image-grid1 img{
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+
+.image-grid2 img{
+  width: 100%;
+  padding-bottom: 10px;
+}
+.container1 img{
+  width:100%;
+  display:block;
+}
+
+.text-section1{
+  margin-top: 90px;
+  margin-left: 120px;
+  margin-bottom: 60px;
+  max-width: 750px;
+  letter-spacing: 1px;
+  line-height:1.5;
+}
+.text-section1 h3{
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.text-section1 p{
+  color: #6F6F6F;
+  margin-bottom: 70px;
+  font-size: 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+
+/* ================================= */
+/* ========= RESPONSIVE CSS ========= */
+/* ================================= */
+
+
+/* ---------- Large Laptops ---------- */
+@media (max-width: 1440px) {
+
+  .left-content {
+    padding-left: 120px;
+  }
+
+  .right-hoarding img {
+    height: 600px;
+  }
+
+  .overview {
+    margin: 60px;
+  }
+
+  .container,
+  .text-section1 {
+    margin-left: 60px;
+  }
+}
+
+
+/* ---------- Tablets ---------- */
+@media (max-width: 1024px) {
+
+  nav {
+    padding: 20px 30px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-content {
+    padding-left: 0;
+    padding-bottom: 40px;
+  }
+
+  .right-hoarding img {
+    height: auto;
+    max-width: 90%;
+    padding: 0;
+  }
+
+  .grey-strip img {
+    margin-top: -40px;
+  }
+
+  .overview {
+    margin: 40px 5%;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container,
+  .text-section1 {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer-right {
+    gap: 40px;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .small-text {
+    font-size: 18px;
+  }
+
+  .left-content h2,
+  .section1 h3,
+  .text-section h3,
+  .text-section1 h3 {
+    font-size: 26px;
+  }
+
+  .client-text,
+  .section1 p,
+  .section2 p,
+  .text-section p,
+  .text-section1 p {
+    font-size: 16px;
+  }
+
+  .logo-img {
+    width: 160px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview {
+    margin: 40px 20px;
+  }
+
+  .container,
+  .text-section1 {
+    margin: 40px 20px;
+  }
+
+  .footer {
+    padding: 60px 20px;
+  }
+
+  .footer-heading {
+    font-size: 36px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .brand-strip {
+    height: 60px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+}
+
+
+/* ---------- Small Phones ---------- */
+@media (max-width: 480px) {
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  .hero {
+    min-height: 420px;
+  }
+
+  .footer-heading {
+    font-size: 28px;
+  }
+
+  .brand-track {
+    gap: 40px;
+  }
+}
+
+</style>
+<body>
+    <nav>
+  <img src="../images/SSlogo.webp" alt="" srcset="">
+  
+  <div class="menu-wrapper">
+    <button class="menu-btn" id="menuBtn">⋯</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="#home">Home</a>
+      <a href="#brand">Brand</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- Background -->
+</div>
+
+<section class="showcase-section">
+
+  <div class="content-wrapper">
+
+    <!-- LEFT CONTENT -->
+    <div class="left-content">
+      <p class="small-text">Our Work Showcase:</p>
+      <h2>Annotsav 2026</h2>
+
+      <p class="client-text">
+        Client: Rotary Club of<br>
+        Belagavi
+      </p>
+
+      <!-- Logo -->
+      <img src="../images/Annlogo.webp" alt="Annotsav Logo" class="logo-img">
+    </div>
+
+    <!-- RIGHT HOARDING -->
+    <div class="right-hoarding">
+      <img src="../images/HORADING Mockup 1.webp" alt="Hoarding">
+    </div>
+
+  </div>
+
+  <!-- GREY DIAGONAL STRIP -->
+  <div class="grey-strip">
+    <!-- <div class="service-text">
+      <span>SERVICE:</span><br>
+      Event Branding, Print Media & On-<br>
+      Ground Creatives
+    </div> -->
+
+    <img src="../images/Grey.webp" alt="" srcset="">
+  </div>
+
+</section >
+<section class="overview">
+  <div class="section1">
+    <h3>Project Overview</h3>
+    <p>
+      
+Social Santa successfully delivered end-to-end print media and event branding solutions for Annotsav 2026, one of Belagavi’s largest food and cultural festivals. From large-format structures to detailed print creatives, our team handled the entire visual identity of the event with a strong focus on impact, consistency and audience engagement.
+    </p>
+  </div>
+
+  <div class="section2">
+   
+    <p>
+     We designed and executed a wide range of creative assets including:
+    </p>
+
+    <div class="image-grid">
+      <img src="../images/ACard1.webp">
+      <img src="../images/ACard2.webp">
+      <img src="../images/ACard3.webp">
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section>
+<div class="full-banner">
+  <img src="../images/Hoarding2.webp">
+</div>
+
+<div class="container">
+  <div class="text-section">
+    <h3>Creative Approach</h3>
+    <p>
+     Our creative approach focused on theme-driven designs reflecting food, culture and celebration. We used bold and festive color palettes for high public visibility, clean typography suitable for large crowds and open spaces, and seamless integration of sponsor branding. All designs were optimized for both close-up interaction and long-distance viewing.
+    </p>
+  </div>
+
+  <div class="image-grid1">
+    <img src="../images/Acolor.webp">
+  </div>
+  <div class="image-grid2">
+    <img src="../images/RNS.webp">
+    </div>
+</div>
+
+</section>
+
+<section class="container1">
+    <img src="../images/annotsav flyer 2026 5 1.webp">
+<div class="text-section1">
+    <h3>Execution and quality</h3>
+    <p>
+      Social Santa ensured print-ready accuracy, color consistency and premium finishing 
+      across all deliverables. Special attention was given to large-scale elements such as 
+      the entrance gate, stage and photobooth, making them key visual highlights of the event.
+
+    </p>
+  
+    <h3>Project Impact</h3>
+    <p>
+      Strong first impression through impactful entrance branding
+      High audience engagement at the photobooth
+      Professional stage presence for performances
+      Consistent branding across the entire venue
+      Positive feedback from organizers and participants
+
+    </p>
+
+    <h3>Why Social Santa</h3>
+    <p>
+      Complete event branding expertise
+      Creative and strategic design thinking
+      End-to-end print media execution
+      Reliable and on-time delivery
+      Proven experience in large-scale events
+
+    </p>
+    <h3>Conclusion</h3>
+    <p>
+     The Annotsav 2026 event branding and print media campaign 
+     highlights Social Santa’s ability to manage large-format event 
+     visuals with precision and creativity. We transform events 
+     into memorable brand experiences through impactful design 
+     and flawless execution.
+    </p>
+  </div>
+</section>
+
+<!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  // Toggle menu on dots click
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    menuDropdown.style.display =
+      menuDropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Prevent closing when clicking inside menu
+  menuDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menuDropdown.style.display = "none";
+  });
+</script>
+</body>
+</html>

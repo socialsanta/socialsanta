@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ocean Plate | Home</title>
+  <style>
+    @font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "AloeVera", sans-serif;
+      background: #0b0f14;
+      color: #eaeaea;
+      
+    }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  background: transparent;
+  z-index: 10;
+}
+
+nav img {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* THREE DOTS WRAPPER */
+.menu-wrapper {
+  position: relative;
+}
+
+/* THREE DOTS BUTTON */
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.menu-btn:hover {
+  opacity: 1;
+}
+
+/* DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LINKS */
+.menu-dropdown a {
+  padding: 12px 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.menu-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7ec2ef;
+  opacity: 0.8;
+}
+
+/* SUBTLE SEPARATOR (optional) */
+.menu-dropdown a + a {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* HERO PAGE */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: url('../images/BG.webp') center / cover no-repeat;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* TEXT */
+.info-wrapper {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  z-index: 2; /* above overlay */
+}
+
+.info-left h3 {
+  font-size: 24px;
+  color: #7bc2eb;
+  opacity: 0.4;
+  font-weight: bolder;
+  line-height: 2.3;
+  text-align: left;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.info-left span {
+  font-size: 20px;
+  color: #7bc2eb;
+  opacity: 0.4;
+  font-weight: 200;
+  line-height: 2.3;
+  text-align: left;
+}
+
+.info-right {
+  max-width: 600px;
+}
+
+.info-right p {
+  font-size: 24px;
+  color: #7bc2eb;
+  opacity: 0.4;
+  font-weight: bolder;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* PAGE 2 – BRAND SECTION */
+.page {
+  padding: 80px 80px;
+  background: #000;
+}
+.card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.cardtext {
+  padding: 30px;
+  letter-spacing: 0.8px;
+  word-spacing: 3px;
+  margin-bottom: 70px;
+}
+.cardtext h3 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 25px;
+  font-weight: 700;
+}
+.cardtext p {
+  font-size: 22px;
+  opacity: 2.0;
+  font-weight: 400;
+  line-height: 1.3;
+  color: rgb(130, 136, 142);
+}
+
+.typography {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 31px;
+  align-items: center;
+  letter-spacing: 0.8px;
+  word-spacing: 3px;
+}
+
+.typography h3{
+  line-height: 1.4;
+  font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+.typography p{
+  padding-top: 20px;
+  padding-bottom: 0%;
+  font-size: 22px;
+  opacity: 2.0;
+  font-weight: 400;
+  line-height: 1.3;
+  color: rgb(130, 136, 142);
+}
+.typography img {
+  border-radius: 33px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.font-box h4 { margin-bottom: 10px; }
+.font-box .big { font-size: 28px; margin-bottom: 10px; }
+.font-box .small { font-size: 12px; opacity: 0.8; }
+
+.page2-branding {
+  margin-top: 80px;
+}
+
+/* PALETTE */
+.palette-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  letter-spacing: 0.8px;
+  word-spacing: 3px;
+}
+
+.palette-text h3 {
+   line-height: 1.4;
+      font-size: 30px;
+      padding-top: 15px;
+      padding-bottom: 10px;
+}
+
+.palette-text p {
+  padding-top: 20px;
+      padding-bottom: 0%;
+     font-size: 22px;
+      opacity: 2.0;
+      font-weight: 400;
+      line-height: 1.3;
+      color: rgb(130, 136, 142);
+}
+
+.palette-card img {
+  border-radius: 33px;
+     padding-bottom: 40px; 
+      height: 100%;
+      width: 100%;
+      margin: auto;
+}
+
+
+/* MOCKUPS */
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.mockup.large {
+  grid-column: span 2;
+}
+
+.mockup {
+  background: #151515;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.mockup img {
+  width: 100%;
+  height: 100%;
+  padding: auto;
+  object-fit: cover;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+
+    @media (max-width: 900px) {
+      .hero-content h2 { font-size: 48px; }
+      .hero, .page { padding: 60px 30px; }
+      .typography { grid-template-columns: 1fr; }
+    }
+
+    /* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* ---------- LARGE LAPTOPS / SMALL DESKTOPS ---------- */
+@media (max-width: 1200px) {
+  nav {
+    padding: 20px 40px;
+  }
+
+  .page {
+    padding: 70px 60px;
+  }
+
+  .footer {
+    padding: 80px 60px 30px;
+  }
+
+  .footer-heading {
+    font-size: 48px;
+  }
+}
+
+/* ---------- TABLETS (iPad / iPad Pro) ---------- */
+@media (max-width: 992px) {
+
+  /* HERO */
+  .hero {
+    height: 650px;
+  }
+
+  .info-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+  }
+
+  .info-right p {
+    font-size: 20px;
+  }
+
+  /* PAGE CONTENT */
+  .page {
+    padding: 60px 40px;
+  }
+
+  .cardtext h3 {
+    font-size: 26px;
+  }
+
+  .cardtext p,
+  .typography p,
+  .palette-text p {
+    font-size: 18px;
+  }
+
+  /* GRIDS */
+  .typography,
+  .palette-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .mockup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mockup.large {
+    grid-column: span 1;
+  }
+
+  /* FOOTER */
+  .footer-top {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .footer-right {
+    gap: 40px;
+  }
+}
+
+/* ---------- MOBILE (Large Phones) ---------- */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 16px 24px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 550px;
+  }
+
+  .info-left h3 {
+    font-size: 18px;
+  }
+
+  .info-left span {
+    font-size: 16px;
+  }
+
+  .info-right p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  /* PAGE */
+  .page {
+    padding: 50px 24px;
+  }
+
+  .cardtext {
+    padding: 24px;
+  }
+
+  .cardtext h3 {
+    font-size: 24px;
+  }
+
+  .cardtext p {
+    font-size: 16px;
+  }
+
+  .typography h3,
+  .palette-text h3 {
+    font-size: 24px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 60px 24px 30px;
+  }
+
+  .footer-heading {
+    font-size: 40px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+@media (max-width: 480px) {
+
+  /* HERO */
+  .hero {
+    height: 480px;
+  }
+
+  .info-wrapper {
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .info-right p {
+    font-size: 16px;
+  }
+
+  /* TEXT */
+  .cardtext h3 {
+    font-size: 22px;
+  }
+
+  .cardtext p,
+  .typography p,
+  .palette-text p {
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  .footer-heading {
+    font-size: 34px;
+  }
+
+  .footer-links-small {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <nav>
+  <img src="../images/SSlogo.webp" alt="" srcset="">
+
+  <div class="menu-wrapper">
+    <button class="menu-btn" id="menuBtn">⋯</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="#home">Home</a>
+      <a href="#brand">Brand</a>
+    </div>
+  </div>
+</nav>
+
+  <!-- PAGE 1 -->
+  <section class="hero" id="home">
+    <div class="info-wrapper">
+      <div class="info-left">
+        <h3>SERVICE:</h3>
+        <span>BRANDING</span>
+        <h3>
+        </h3>
+        <h3>VISIT THEM:</h3>
+        <span>
+        <a href="https://www.oceanplate.com">
+          www.oceanplate.com
+        </a>
+      </span>
+      </div>
+      <div class="info-right">
+      <p>
+        Ocean Plate represents a restaurant brand specializing in seafood and
+        coastal cuisine. The visual identity emphasizes freshness, nature, and
+        cultural authenticity.
+      </p>
+    </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="page" id="brand">
+    <div class="card">
+      <img src="../images/page2.webp" alt="Logo Design" />
+    </div>
+    <div class="cardtext">
+        <h3>Logo Design</h3>
+        <p >
+          The Ocean Plate logo reflects coastal identity through meaningful elements—green leaf for freshness, 
+blue fish and waves for seafood authenticity, and golden tones representing sunrise and warmth. 
+The logo must remain clean, proportional and unaltered for consistent brand recognition.
+        </p>
+      </div>
+    <div class="typography">
+      <img src="../images/Aspekta.webp" alt="" srcset="">
+      <div>
+        <h3>Typography</h3>
+        <p>
+          Aspekta 550 is used for English to maintain a modern, premium feel,
+          while Sarala is used for Marathi to preserve regional authenticity. 
+          Together, they create a clean bilingual identity with strong readability across mediums.
+        </p>
+      </div>
+    </div>
+    <!-- PAGE 2 – Branding Content -->
+<div class="page2-branding">
+
+  <!-- Color Palette -->
+  <div class="palette-wrapper">
+    <div class="palette-text">
+      <h3>Color Palette</h3>
+      <p>
+        The brand uses ocean blues, fresh greens and warm sunset shades inspired by coastal landscapes. 
+        Primary colors define the brand identity, while value scales create design flexibility for backgrounds, 
+        highlights, buttons, and social creatives—ensuring modern and consistent visuals.
+      </p>
+    </div>
+
+    <div class="palette-card">
+      <img src="../images/colorP.webp" alt="" srcset="">
+    </div>
+  </div>
+
+  <!-- Mockups -->
+  <div class="mockup-grid">
+    <div class="mockup large">
+      <img src="../images/OPMockup1.webp" alt="">
+    </div>
+    <div class="mockup">
+      <img src="../images/OPMockup2.webp" alt="">
+    </div>
+    <div class="mockup">
+      <img src="../images/OPMockup3.webp" alt="">
+    </div>
+  </div>
+
+</div>
+
+  </section>
+
+  <!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  // Toggle menu on dots click
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    menuDropdown.style.display =
+      menuDropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Prevent closing when clicking inside menu
+  menuDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menuDropdown.style.display = "none";
+  });
+</script>
+
+
+</body>
+</html>

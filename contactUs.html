@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#6C3BAA,#9D50BB);
+padding:20px;
+}
+
+/* MAIN CONTAINER */
+.wrapper{
+display:flex;
+gap:30px;
+width:100%;
+max-width:1000px;
+flex-wrap:wrap;
+}
+
+/* LEFT INFO */
+.contact-info{
+flex:1;
+color:white;
+padding:20px;
+}
+
+.contact-info h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.contact-info p{
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.info-item{
+margin-bottom:10px;
+font-size:16px;
+}
+
+/* FORM CARD */
+.container{
+flex:1;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.container h2{
+text-align:center;
+margin-bottom:20px;
+color:#333;
+}
+
+/* INPUTS */
+.input-group{
+margin-bottom:15px;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+transition:0.3s;
+}
+
+input:focus, textarea:focus{
+border-color:#6C3BAA;
+box-shadow:0 0 8px rgba(108,59,170,0.3);
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#6C3BAA;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#532d87;
+transform:scale(1.03);
+}
+
+/* POPUP */
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+text-align:center;
+transition:0.4s;
+z-index:1000;
+}
+
+.popup.active{
+transform:translate(-50%,-50%) scale(1);
+}
+
+.popup h3{
+color:#6C3BAA;
+margin-bottom:10px;
+}
+
+/* OVERLAY */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.wrapper{
+flex-direction:column;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- LEFT SIDE INFO -->
+<div class="contact-info">
+
+<h2>Contact Us</h2>
+
+<p>
+Have a project in mind or want to collaborate with us?  
+Reach out and let's build something great together.
+</p>
+
+<div class="info-item"><strong>Phone:</strong> +91 8792757839</div>
+<div class="info-item"><strong>Email:</strong> socialsanta2@gmail.com</div>
+<div class="info-item"><strong>Location:</strong> Belagavi, India</div>
+
+</div>
+
+<!-- RIGHT SIDE FORM -->
+<div class="container">
+<h2>Send Message</h2>
+
+<form id="contactForm">
+<div class="input-group">
+<input type="text" name="name" placeholder="Your Name" required>
+</div>
+
+<div class="input-group">
+<input type="email" name="email" placeholder="Your Email" required>
+</div>
+
+<div class="input-group">
+<textarea name="message" placeholder="Your Message" required></textarea>
+</div>
+
+<button type="submit">Send Message</button>
+</form>
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<h3>✅ Message Sent!</h3>
+<p>We will contact you soon.</p>
+<button onclick="closePopup()">OK</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<script>
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("popup");
+const overlay = document.getElementById("overlay");
+
+form.addEventListener("submit", function(e){
+e.preventDefault();
+
+const formData = new FormData(form);
+
+fetch("https://formsubmit.co/ajax/revankarsakshi489@gmail.com", {
+method: "POST",
+body: formData
+})
+.then(response => response.json())
+.then(data => {
+popup.classList.add("active");
+overlay.classList.add("active");
+form.reset();
+})
+.catch(error => alert("Something went wrong!"));
+});
+
+function closePopup(){
+popup.classList.remove("active");
+overlay.classList.remove("active");
+}
+</script>
+
+</body>
+</html>

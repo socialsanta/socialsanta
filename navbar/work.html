@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Social Santa – Work</title>
+
+<style>
+/* ---------------- RESET ---------------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family: "Inter", sans-serif;
+  max-width: 1500px;
+  margin-left: 100px;
+}
+
+    .navbar {
+      width: 100%;
+      /* max-width: 1100px; */
+      /* margin: 30px auto; */
+      padding: 26px 38px;
+      /* background: linear-gradient(90deg, #2b1b5a, #120a2e); */
+      border-bottom-left-radius: 45px;
+      border-bottom-right-radius: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding-left: 140px;
+      padding-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+      transition: all 0.35s ease;
+    }
+
+    nav.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+
+    nav a.active {
+      background: white;
+      color: black;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    #navMenu{
+      gap: 30px;
+      margin-left: 50px;
+
+    }
+
+    /* #navMenu .Contact {
+      margin-left:300px;
+
+    } */
+
+    /* THREE DOTS */
+    .menu-dots {
+      display: flex;
+      align-items: center; /* fixed vertical alignment */
+      gap: 6px;
+      cursor: pointer;
+      padding-right: 140px;
+      padding-top: 10px;
+    }
+
+    .menu-dots span {
+      width: 11px;
+      height: 11px;
+      background: white;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .menu-dots span:first-child {
+      width: 11px;
+      height: 11px;
+      margin-bottom: 7px;
+      background: white;
+      border-radius: 50%;
+      display: block;
+    }
+
+/* ---------------- WORK SECTION ---------------- */
+.work-section{
+  padding:100px 70px 40px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.work-left h1{
+  font-size:150px;
+  font-weight:800;
+  letter-spacing:6px;
+  opacity:0.08;
+}
+
+.work-left span{
+  font-size:90px;
+}
+
+/* ---------------- FILTERS ---------------- */
+.work-right{
+  text-align:right;
+}
+
+.filter-title{
+  font-size:12px;
+  opacity:0.6;
+  letter-spacing:1px;
+  margin-bottom:18px;
+}
+
+.filters{
+  display:grid;
+  grid-template-columns:repeat(2, 180px);
+  gap:16px;
+}
+
+.filters button{
+  background:transparent;
+  border:1px solid #222;
+  color:#fff;
+  padding:14px 0;
+  font-size:11px;
+  letter-spacing:1px;
+  cursor:pointer;
+}
+
+.filters button.active,
+.filters button:hover{
+  border-color:#555;
+}
+
+/* ---------------- DIVIDER ---------------- */
+.divider{
+  height:1px;
+  background:#222;
+  margin:70px;
+}
+
+/* ---------------- PROJECT GRID ---------------- */
+.projects{
+  padding:0 70px 120px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:50px 40px;
+}
+
+/* ---------------- CARD ---------------- */
+.card{
+  transition:opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card.hide{
+  opacity:0;
+  transform:scale(0.95);
+  pointer-events:none;
+  display:none;
+}
+
+.card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+.card-content{
+  margin-top:14px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.card-title{
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.card-category{
+  font-size:11px;
+  opacity:0.6;
+  margin-top:6px;
+}
+
+.view a{
+  font-size:18px;
+  opacity:0.8;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.view span{
+  font-size:20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+.hide{
+  display: none;
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:1200px){
+  .projects{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  header,
+  .work-section,
+  .projects{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+  .work-section{
+    flex-direction:column;
+    gap:40px;
+  }
+
+  .projects{
+    grid-template-columns:1fr;
+  }
+
+  .filters{
+    grid-template-columns:1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo"><img src="../images/SSlogo.webp" alt="" srcset=""></div>
+
+    <nav id="navMenu">
+      <a href="../index.html" class="active">Home</a>
+      <a href="../services.html">Services</a>
+      <a href="../navbar/work.html">Works</a>
+      <a href="../aboutUs.html">About us</a>
+      <a class="Contact">Contact us</a>
+    </nav>
+
+    <div class="menu-dots" id="menuBtn">
+      <span class="first"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+<section class="work-section">
+  <div class="work-left">
+    <h1>WORK <span>✦</span></h1>
+  </div>
+
+  <div class="work-right">
+    <div class="filter-title">FILTER BY:</div>
+    <div class="filters">
+      <button class="active" data-filter="all">ALL</button>
+      <button data-filter="production">PRODUCTION</button>
+       <button data-filter="influencer">INFLUENCER MARKETING</button>
+      <button data-filter="branding">BRANDING & PACKAGING</button>
+      <button data-filter="performance">PERFORMANCE</button>
+      <button data-filter="creative">CREATIVE DESIGN</button>
+      <button data-filter="uiux">UI/UX</button>
+      <button data-filter="social">SOCIAL MEDIA</button>
+       <button data-filter="online-marketing">ONLINE MARKETING</button>
+        <button data-filter="offline-marketing">OFFLINE MARKETING</button>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="projects">
+
+  <div class="card" data-category="branding">
+    <img src="./images/Card.png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">OCEAN PLATE</div>
+        <div class="card-category">BRANDING</div>
+      </div>
+      <a href="../Oceanplate/Ocean.html" class="view">VIEW PROJECT <span>↗</span></a>
+    </div>
+  </div>
+
+  <div class="card" data-category="social">
+    <img src="./images/Card (1).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">GALANGAL</div>
+        <div class="card-category">SOCIAL MEDIA</div>
+      </div>
+      <div class="view">VIEW PROJECT <span>↗</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-category="branding">
+    <img src="./images/Card (2).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">AMD</div>
+        <div class="card-category">BRANDING</div>
+      </div>
+      <a href="../AMD/AMD.html" class="view">VIEW PROJECT <span>↗</span></a>
+    </div>
+  </div>
+  
+
+  <div class="card" data-category="performance">
+    <img src="./images/Card (3).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">NIYAAZ</div>
+        <div class="card-category">PERFORMANCE</div>
+      </div>
+      <div class="view">VIEW PROJECT <span>↗</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-category="social">
+    <img src="./images/Card (4).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">NAVIEO</div>
+        <div class="card-category">SOCIAL MEDIA</div>
+      </div>
+      <a href="../Navieo/navieo.html" class="view">VIEW PROJECT <span>↗</span></a>
+    </div>
+  </div>
+
+  <div class="card" data-category="production">
+    <img src="./images/Card (5).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">TBQ</div>
+        <div class="card-category">PRODUCTION</div>
+      </div>
+      <div class="view">VIEW PROJECT <span>↗</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-category="offline-marketing">
+    <img src="./images/Card (5).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">Annostav</div>
+        <div class="card-category">online-marketing</div>
+      </div>
+      <a href="../Annostav/Annostav.html" class="view">VIEW PROJECT <span>↗</span></a>
+    </div>
+  </div>
+
+   <div class="card" data-category="online-marketing offline-marketing">
+    <img src="./images/Card (5).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">Belcon</div>
+        <div class="card-category">online-marketing</div>
+        <div class="card-category">online-marketing</div>
+      </div>
+      <a href="../Belcon/belcon.html" class="view">VIEW PROJECT <span>↗</span></a>
+    </div>
+  </div>
+
+   <div class="card" data-category="online-marketing">
+    <img src="./images/Card (5).png">
+    <div class="card-content">
+      <div>
+        <div class="card-title">Creamaai</div>
+        <div class="card-category">online-marketing</div>
+      </div>
+      <a href="../creamaai/creamaai.html" class="view">VIEW PROJECT <span>↗</span></a>
+    </div>
+  </div>
+</section>
+<!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    // Toggle menu visibility
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+
+    // Active state handling for nav links
+    const navLinks = navMenu.querySelectorAll("a");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  </script>
+
+
+<script>
+const filterButtons = document.querySelectorAll('.filters button');
+const cards = document.querySelectorAll('.card');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+
+    cards.forEach(card => {
+
+      const categories = card.getAttribute('data-category').split(" ");
+
+      if (filter === "all" || categories.includes(filter)) {
+        card.classList.remove("hide");
+      } else {
+        card.classList.add("hide");
+      }
+
+    });
+
+  });
+});
+</script>
+
+</body>
+</html>

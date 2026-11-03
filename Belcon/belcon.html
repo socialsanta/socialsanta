@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belcon | Home</title>
+</head>
+<style>
+    @font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "AloeVera", sans-serif;
+      background: #000;
+      color: #eaeaea;
+      
+    }
+
+html, body {
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  background: transparent;
+  z-index: 10;
+}
+
+nav img {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* THREE DOTS WRAPPER */
+.menu-wrapper {
+  position: relative;
+}
+
+/* THREE DOTS BUTTON */
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.menu-btn:hover {
+  opacity: 1;
+}
+
+/* DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LINKS */
+.menu-dropdown a {
+  padding: 12px 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.menu-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7ec2ef;
+  opacity: 0.8;
+}
+
+/* SUBTLE SEPARATOR (optional) */
+.menu-dropdown a + a {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero{
+  width:100%;
+  height:730px;
+  background:url("../images/BBG.webp") center/cover no-repeat;
+  position:relative;
+}
+
+.hero .bottom-left{
+  position:absolute;
+  bottom:30px;
+  left:40px;
+  font-size:30px;
+  opacity:.8;
+}
+
+.hero .bottom-left span{
+  display:block;
+  margin-top:6px;
+}
+
+
+/* TEXT */
+.info-wrapper {
+  position: absolute;
+  bottom: 30px;
+  padding-left: 27px;
+  left: 60px;
+
+  display: flex;
+  gap: 80px; /* space between SERVICE and VISIT */
+  align-items: flex-end;
+
+  z-index: 2;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column; /* keeps span below h3 */
+}
+
+
+.info-block h3 {
+  font-size: 24px;
+  color:white;
+  /* opacity: 0.5; */
+  font-weight: bolder;
+  line-height: -3.3;
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+.info-block span {
+  font-size: 20px;
+  color:white;
+
+  /* opacity: 0.5; */
+  font-weight: 200;
+  /* line-height: 2.3; */
+  text-align: left;
+}
+
+
+/* ---------------- COMMON SECTIONS ---------------- */
+.section{
+  padding:160px 120px;
+}
+
+.split{
+  display:flex;
+  justify-content:space-between;
+  gap:80px;
+}
+
+/* LEFT */
+.left{
+  max-width:560px;
+}
+
+.left h2{
+  font-size:35px;
+  font-weight:600;
+  margin-bottom:16px;
+}
+
+.left h5{
+    font-size: 20px;
+    color: #777777;
+    font-weight: bolder;
+}
+.left p{
+  font-size:20px;
+  line-height:1.7;
+  opacity:.75;
+  color: #777777;
+}
+
+/* RIGHT */
+.right{
+  font-size:34px;
+  font-weight:600;
+  line-height:1.35;
+  opacity:.35;
+  text-align:right;
+}
+
+/*about project*/
+.abtproject{
+  padding:80px 120px;
+}
+
+.abtproject h2{
+    font-size: 36px;
+    opacity: 0.5;
+    color: #777777;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.abtproject p{
+    font-size: 20px;
+    line-height: 1.7;
+    color: #777777;
+    max-width:900px;
+    margin-bottom:40px;
+}
+.abtproject img{
+    width:100%;
+    display:block;
+    margin-top: 150px;
+    align-items: center;
+}
+.proimg{
+    padding-left: 150px;
+}
+
+.our-role {
+  background: #000000;
+  color: #ffffff;
+  padding: 100px 10%;
+}
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+}
+
+/* Top Section */
+.top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.top-content h2 {
+  font-size: 32px;
+  color: #303030;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  color: #777777;
+}
+
+.top-content .right {
+  max-width: 450px;
+  color: #cbcbcb;
+  font-size: 23px;
+  line-height: 1.6;
+  text-align: left;
+  margin-left: 50px;
+}
+
+/* Services */
+.services-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  padding-left: 140px;
+}
+.offline-marketing {
+  background: #0e0e0e;
+  color: #ffffff;
+  padding: 120px 10%;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+.section {
+  background: #000;
+  padding: 120px 10%;
+  position: relative;
+}
+
+/* Billboard Wrapper */
+.billboard {
+  display: flex;
+  justify-content:left;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+/* Billboard Image */
+.billboard img {
+  width: 1100px;
+  max-width: 100%;
+  transform: translateY(-40px); /* makes it float */
+  filter: drop-shadow(0px 25px 40px rgba(0, 0, 0, 0.8));
+}
+
+/* Text Content */
+.content {
+  text-align: right;
+  max-width: 500px;
+  margin-left: auto;
+  margin-top: -420px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+  text-align: left;
+}
+
+.content h2 {
+  font-size: 52px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  color: #303030;
+}
+
+.content p {
+  max-width: 450px;
+  font-size: 20px;
+  color: #aaa;
+  line-height: 1.7;
+}
+
+/* Grid */
+.offline-marketing{
+  background: #000000;
+}
+
+.offline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 120px;
+  column-gap: -50px;
+  margin-bottom: 100px;
+}
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  width: 350px;
+  height: 550px;
+  object-fit: cover;
+  background-color: #D9D9D9;
+}
+
+.card span {
+  display: block;
+  margin-top: 25px;
+  font-size: 23px;
+  color: #777777;
+  font-family: "AloeVera", sans-serif;
+  margin-left: 50px;
+  text-align: left;
+}
+
+.big-text img {
+  margin-left: 80px;
+  margin-top: 90px;
+  width: 90%;
+}
+
+.online-section {
+  background: #000;
+  padding: 120px 10%;
+}
+
+.online-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Left Text */
+.online-text {
+  flex: 1;
+}
+
+.online-text h2 {
+  font-size: 40px;
+  color: #777777;
+  font-weight:900;
+  margin-bottom: 15px;
+}
+
+.online-text h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ccc;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.online-text p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #aaa;
+  max-width: 100%;
+}
+
+.marketing-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #000000; /* dark background */
+  display: flex;
+  justify-content: center;
+}
+
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+/* ============================= */
+/* ========= RESPONSIVE ========= */
+/* ============================= */
+
+/* Large laptops */
+@media (max-width: 1440px) {
+
+  .section,
+  .our-role,
+  .offline-marketing,
+  .online-section,
+  .footer {
+    padding: 100px 6%;
+  }
+
+  .split {
+    gap: 50px;
+  }
+
+  .billboard img {
+    width: 100%;
+  }
+
+  .content {
+    margin-top: -250px;
+    margin-right: 0;
+  }
+}
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  nav {
+    padding: 20px 30px;
+  }
+
+  .hero {
+    height: 550px;
+  }
+
+  .info-wrapper {
+    left: 30px;
+    gap: 40px;
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 80px 5%;
+  }
+
+  .split {
+    flex-direction: column;
+  }
+
+  .right {
+    text-align: left;
+    opacity: .6;
+  }
+
+  .top-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .services-wrapper {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .offline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+  }
+
+  .content {
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .online-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer-right {
+    gap: 40px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  .hero {
+    height: 420px;
+  }
+
+  .info-wrapper {
+    left: 20px;
+    bottom: 20px;
+    gap: 20px;
+  }
+
+  .info-block h3 {
+    font-size: 18px;
+  }
+
+  .info-block span {
+    font-size: 16px;
+  }
+
+  .left h2 {
+    font-size: 26px;
+  }
+
+  .left p,
+  .online-text p,
+  .content p {
+    font-size: 16px;
+  }
+
+  .content h2,
+  .online-text h2 {
+    font-size: 28px;
+  }
+
+  .offline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .abtproject {
+    padding: 60px 5%;
+  }
+
+  .proimg {
+    padding-left: 0;
+  }
+
+  .footer {
+    padding: 60px 20px;
+  }
+
+  .footer-heading {
+    font-size: 36px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-col a {
+    font-size: 14px;
+  }
+
+  .brand-strip {
+    height: 60px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+}
+
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .hero {
+    height: 360px;
+  }
+
+  .footer-heading {
+    font-size: 28px;
+  }
+
+  .online-text h3 {
+    font-size: 18px;
+  }
+
+  .brand-track {
+    gap: 40px;
+  }
+}
+
+</style>
+<body>
+    <nav>
+  <img src="../images/SSlogo.webp" alt="" srcset="">
+
+  <div class="menu-wrapper">
+    <button class="menu-btn" id="menuBtn">⋯</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="#home">Home</a>
+      <a href="#brand">Brand</a>
+    </div>
+  </div>
+</nav>
+
+    <section class="hero">
+  <div class="info-wrapper">
+
+  <div class="info-block">
+    <h3>SERVICE:</h3>
+    <span>EVENT MANAGEMENT</span>
+  </div>
+
+  <div class="info-block">
+    <h3>VISIT THEM:</h3>
+    <span>
+      <a href="https://www.credaibelcon.com">
+        www.credaibelcon.com
+      </a>
+    </span>
+  </div>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="section split">
+  <div class="left">
+    <h2>CREDAI Belcon Expo 2026</h2>
+    <h5>
+      Complete 360° Event Marketing From Strategy to Execution<br><br>
+    </h5>
+    <p>From idea to impact, Social Santa successfully
+        handled the complete marketing for CREDAI Belcon 
+        Expo 2026. Every touchpoint online, offline, branding,
+        and engagement was strategically crafted to 
+        maximize visibility, footfall, and brand value.
+    </p>
+  </div>
+  <div class="right">
+    One Vision.<br>
+    One Strategy.<br>
+    Total Execution.
+  </div>
+</section>
+
+<!-- IMAGE -->
+<section class="abtproject">
+    <h2>ABOUT THE PROJECT</h2>
+    <p>
+        CREDAI Belcon Expo is one of the most 
+        important real estate events in Belgaum.
+        bringing together developers, investors, 
+        homebuyers, and industry leaders.
+    </p>
+    <div class="proimg">
+  <img src="../images/Belvisual1.webp" alt="">
+  </div>
+</section>
+
+
+<section class="our-role">
+  <div class="container">
+
+    <!-- Top Section -->
+    <div class="top-content">
+      <div class="left">
+        <h2>OUR ROLE</h2>
+        <p class="subtitle">360° Event Marketing by Social Santa</p>
+      </div>
+
+      <div class="right">
+        <p>
+          We planned, designed, and executed the entire marketing ecosystem
+          of the expo covering both online and offline platforms.
+        </p>
+      </div>
+    </div>
+
+    <!-- Services Layout -->
+    <div class="services-wrapper">
+  <img src="../images/Belvisual2.webp" alt="">
+  </div>
+</section>
+
+<!-- IMAGE -->
+<section class="center-img">
+</section>
+
+<!-- BILLBOARD -->
+<section class="section">
+  <div class="billboard">
+    <img src="../images/BHoarding.webp" alt="Billboard">
+  </div>
+
+  <div class="content">
+    <h2>OFFLINE MARKETING</h2>
+    <p>
+      To build strong recall and visibility,
+      we executed large-scale offline
+      marketing across key locations.
+    </p>
+  </div>
+</section>
+
+<section class="offline-marketing">
+
+    <!-- Image Grid -->
+    <div class="offline-grid">
+
+      <div class="card">
+        <img src="images/img1.webp" alt="">
+        <span>Hoardings across<br> city locations</span>
+      </div>
+
+      <div class="card">
+        <img src="images/img2.webp" alt="">
+        <span>Banners and <br> Creatives</span>
+      </div>
+
+      <div class="card">
+        <img src="images/img3.webp" alt="">
+        <span>Arch Gate Branding</span>
+      </div>
+
+      <div class="card">
+        <img src="images/img4.webp" alt="">
+        <span>Venue Visual <br>Communication</span>
+      </div>
+
+      <div class="card">
+        <img src="images/img5.webp" alt="">
+        <span>Directional Signage</span>
+      </div>
+
+      <div class="card">
+        <img src="images/img6.webp" alt="">
+        <span>Print Collaterals</span>
+      </div>
+
+    </div>
+
+    <!-- Big Statement -->
+    <div class="big-text">
+      <img src="../images/BelText.webp" alt="" srcset="">
+    </div>
+</section>
+
+<section class="online-section">
+
+  <div class="online-container">
+
+    <!-- Left Text Content -->
+    <div class="online-text">
+      <h2>ONLINE MARKETING</h2>
+      <h3>8 Years Offline. This Year, <br> Digital Takes Over.</h3>
+
+      <p>
+        For the past 8 years, Belcon focused only on offline marketing.
+        This year, they stepped into digital with us. Our objective was to
+        build a strong online presence, reach the right audience, and
+        convert digital engagement into real event visitors.
+      </p>
+    </div>
+
+</section>
+<section class="marketing-section">
+
+    <!-- Your image goes here -->
+    <div class="image-wrapper">
+      <img src="../images/Belvisual3.webp" alt="Marketing Image">
+    </div>
+</section>
+
+<!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  // Toggle menu on dots click
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    menuDropdown.style.display =
+      menuDropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Prevent closing when clicking inside menu
+  menuDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menuDropdown.style.display = "none";
+  });
+</script>
+</section>
+</body>
+</html>

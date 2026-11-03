@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creamaai | Home</title>
+</head>
+<style>
+@font-face {
+     font-family: "AloeVera";
+    src: url("../fonts/AloeVera-Light.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+      font-family: "AloeVera", sans-serif;
+      background: #0b0f14;
+      color: #eaeaea;
+}
+
+a { color: inherit; text-decoration: none; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  background: transparent;
+  z-index: 10;
+}
+
+nav img {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* THREE DOTS WRAPPER */
+.menu-wrapper {
+  position: relative;
+}
+
+/* THREE DOTS BUTTON */
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.menu-btn:hover {
+  opacity: 1;
+}
+
+/* DROPDOWN */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 160px;
+  z-index: 20;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LINKS */
+.menu-dropdown a {
+  padding: 12px 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.menu-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #7ec2ef;
+  opacity: 0.8;
+}
+
+/* SUBTLE SEPARATOR (optional) */
+.menu-dropdown a + a {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* HERO PAGE */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: url('../images/CBG.webp') center / cover no-repeat;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.info-wrapper {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  z-index: 2; /* above overlay */
+}
+
+.info-left h3 {
+  font-size: 24px;
+  color: #FFFFFF;
+  opacity: 0.5;
+  font-weight: 200;
+  line-height: 2.3;
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.info-left span {
+  font-size: 20px;
+  color: #FFFFFF;
+  opacity: 0.5;
+  font-weight: 200;
+  line-height: 2.3;
+  text-align: left;
+}
+
+.brand-showcase {
+  width: 100%;
+  min-height: 100vh;
+  background: #4b4fa3; /* replace with bg image if needed */
+  padding: 120px 0px 150px 160px;
+}
+
+.brand-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 60px;
+  color: #fff;
+}
+
+/* HEADER */
+.brand-header {
+  text-align: center;
+  margin-bottom: 120px;
+  display: block;
+}
+
+.brand-header img {
+  display: block;
+  margin-top: 6px;
+}
+
+.brand-header .intro {
+  max-width: 560px;
+  font-family: "AloeVera", sans-serif;
+  /* margin: 24px auto 0; */
+  line-height: 1.4;
+  opacity: 0.85;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 30px;
+}
+
+/* PACKAGING BLOCK */
+.brand-block {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  gap: 10px;
+  align-items: center;
+  line-height: 1.4;
+  margin-bottom: 120px;
+}
+
+.brand-block h3 {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.brand-block p {
+  opacity: 0.85;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.brand-block ul {
+  padding-left: 18px;
+  font-size: 18px ;
+}
+
+.brand-block li {
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+
+/* FLAVOURS */
+.flavour-section {
+  text-align: left;
+  margin-bottom: 120px;
+  margin-left: 140px;
+}
+
+.flavours {
+  list-style:inside;
+  padding: 0;
+}
+
+.flavours li {
+  margin-bottom: 8px;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.flavour-text{
+  max-width: 520px;
+  margin-bottom: 15px;
+  font-weight:800;
+  font-size: 22px;
+}
+
+.flavour-text1{
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.image-box2 {
+  margin-top: -30px;
+  margin-left: -170px;
+}
+
+/* CONCLUSION */
+.conclusion {
+  text-align: center;
+  max-width: 560px;
+  margin-left: 180px;
+  margin-top: 100px;
+}
+
+.conclusion h3 {
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+.conclusion p {
+  font-size: 20px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* BIG PRODUCT WRAPPER */
+.hero-product {
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* PRODUCT IMAGE */
+.hero-product img {
+  margin-left: -180px;
+  width: 1700px;
+  height: auto;
+  transform: translateY(-40px);
+  z-index: 3;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35));
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .brand-block {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brand-container {
+    padding: 0 30px;
+  }
+}
+
+
+/* FOOTER */
+.footer {
+  background: #0b0b0b;
+  padding: 90px 120px 30px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* LEFT */
+.footer-tagline {
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.footer-btn {
+  background: #7b3fe4;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.social-icons span {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer-links-small {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links-small a {
+  font-size: 15px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #aaa;
+}
+
+.footer-col span {
+  font-size: 18px;
+  color: #fff;
+  /* opacity: 0.8; */
+  font-weight: 600;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* BRAND STRIP */
+.brand-strip{
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #070707;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 20px;
+  position: relative;
+}
+
+/* gradient fade left-right (premium look) */
+.brand-strip::before,
+.brand-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.brand-strip::before{
+  left:0;
+  background:linear-gradient(to right,#070707,transparent);
+}
+
+.brand-strip::after{
+  right:0;
+  background:linear-gradient(to left,#070707,transparent);
+}
+
+.brand-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation: scrollBrands 28s linear infinite;
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:2px;
+  color:#9d6cff;
+  white-space:nowrap;
+  font-weight:500;
+  transition:.3s;
+}
+
+/* hover glow */
+.brand:hover{
+  color:#fff;
+  text-shadow:0 0 12px #7b3fe4;
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes scrollBrands{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.brand-strip:hover .brand-track{
+  animation-play-state: paused;
+}
+
+    @media (max-width: 900px) {
+      .hero-content h2 { font-size: 48px; }
+      .hero, .page { padding: 60px 30px; }
+      .typography { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 1440px) {
+  .brand-showcase {
+    padding-left: 180px;
+  }
+
+  .hero-product img {
+    max-width: 1600px;
+  }
+}
+@media (max-width: 1200px) {
+  nav {
+    padding: 20px 40px;
+  }
+
+  .brand-showcase {
+    padding: 100px 40px;
+  }
+
+  .brand-container {
+    padding: 0;
+  }
+
+  .brand-block {
+    gap: 40px;
+  }
+
+  .hero-product img {
+    width: 1200px;
+    margin-left: 0;
+  }
+}
+@media (max-width: 992px) {
+  .hero {
+    height: 650px;
+  }
+
+  .info-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    left: 40px;
+    right: 40px;
+  }
+
+  .brand-header {
+    text-align: left;
+  }
+
+  .brand-block {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .flavour-section {
+    margin-left: 0;
+  }
+
+  .image-box2 {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .conclusion {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .hero-product img {
+    width: 100%;
+    transform: none;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .footer-right {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 24px;
+  }
+
+  .hero {
+    height: 550px;
+  }
+
+  .brand-header img {
+    width: 160px;
+  }
+
+  .brand-header .intro {
+    font-size: 18px;
+  }
+
+  .brand-block h3 {
+    font-size: 22px;
+  }
+
+  .brand-block p,
+  .flavours li {
+    font-size: 18px;
+  }
+
+  .hero-product img {
+    width: 100%;
+  }
+
+  .footer-heading {
+    font-size: 42px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width: 480px) {
+  nav {
+    padding: 14px 18px;
+  }
+
+  .hero {
+    height: 480px;
+  }
+
+  .info-wrapper {
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .info-left h3 {
+    font-size: 18px;
+  }
+
+  .info-left span {
+    font-size: 16px;
+  }
+
+  .brand-showcase {
+    padding: 80px 20px;
+  }
+
+  .brand-header img {
+    width: 140px;
+  }
+
+  .brand-header .intro {
+    font-size: 16px;
+  }
+
+  .brand-block ul {
+    font-size: 16px;
+  }
+
+  .flavour-text {
+    font-size: 18px;
+  }
+
+  .flavours li {
+    font-size: 16px;
+  }
+
+  .conclusion h3 {
+    font-size: 22px;
+  }
+
+  .conclusion p {
+    font-size: 16px;
+  }
+
+  .hero-product img {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 60px 20px 30px;
+  }
+
+  .footer-heading {
+    font-size: 34px;
+  }
+
+  .footer-links-small {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons {
+    margin: 20px 0;
+  }
+}
+
+
+</style>
+<body>
+    <nav>
+  <img src="../images/SSlogo.webp" alt="" srcset="">
+  
+  <div class="menu-wrapper">
+    <button class="menu-btn" id="menuBtn">⋯</button>
+
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="#home">Home</a>
+      <a href="#brand">Brand</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="info-wrapper">
+      <div class="info-left">
+        <h3>SERVICE:</h3>
+        <span>PACKAGING DESIGN</span>
+        <h3>
+        </h3>
+        <h3>VISIT THEM:</h3>
+        <span>
+        <a href="https://www.Creamaai.com">
+          www.Creamaai.com
+        </a>
+      </span>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="brand-showcase" id="brand">
+  <div class="brand-container">
+
+    <!-- HEADER -->
+    <div class="brand-header">
+        <img src="../images/creamaaiLogo.webp" alt="" srcset="" width="200px">
+
+      <p class="intro">
+        A modern, premium ice cream brand crafted to deliver rich flavours,
+        clean aesthetics, and an unforgettable creamy experience.
+      </p>
+    </div>
+
+    <!-- PACKAGING INTRO -->
+    <div class="brand-block">
+        <div class="image-box">
+        <img src="../images/01. Ice Cream Bucket Mockup 1.webp" alt="" srcset="">
+      </div>
+      <div class="text">
+        <h3>Our packaging system is built on 3 key pillars:</h3>
+        <ul>
+          <li>Premium Minimalism – clean layouts, bold colours</li>
+          <li>Flavour Clarity – each variant instantly recognisable</li>
+          <li>Shelf Impact – strong visibility in freezers & retail aisles</li>
+        </ul>
+      </div>
+
+      
+    </div>
+
+    <!-- FLAVOUR SECTION -->
+    <div class="flavour-section">
+    <div class="text">
+      <p class="flavour-text">
+        Each flavour features a dedicated solid matte colour tone to enhance
+        recognisability and premium feel.
+      </p>
+
+      <ul class="flavours">
+        <li>Blue – Vanilla Classic</li>
+        <li>Green – Pistachio Royale</li>
+        <li>Brown – Chocolate Overload</li>
+      </ul>
+      <p class="flavour-text1">
+        This system ensures brand consistency and visual hierarchy.
+      </p>
+      </div>
+      <div class="image-box2">
+        <img src="../images/01. Ice Cream Cup Mockup 2.webp" alt="" srcset="">
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <h3>Conclusion</h3>
+      <p>
+        Premium design. Clear communication. Retail-ready impact.
+        Creamaai’s packaging system ensures consistency, beauty,
+        and strong brand recall across all touchpoints.
+      </p>
+    </div>
+
+    <!-- BIG PRODUCT IMAGE -->
+    <div class="hero-product">
+      <img src="../images/creamaai.webp" alt="" srcset="">
+    </div>
+
+  </div>
+</section>
+<!-- BRANDS STRIP -->
+<section class="brand-strip">
+  <div class="brand-track">
+
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+    <!-- duplicate (IMPORTANT for infinite loop) -->
+    <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+     <div class="brand">✦ NIYAAZ</div>
+    <div class="brand">✦ GALANGAL</div>
+    <div class="brand">✦ AMD</div>
+    <div class="brand">✦ NAVIEO</div>
+    <div class="brand">✦ TBQ</div>
+    <div class="brand">✦ KOYALA</div>
+    <div class="brand">✦ SUNNY’S IN BOTTLE</div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <p class="footer-tagline">TURNING BRANDS INTO EXPERIENCES.</p>
+
+      <h2 class="footer-heading">
+        LET’S <span class="footer-btn">↗</span><br>
+        WORK TOGETHER
+      </h2>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>in</span>
+      </div>
+
+      <div class="footer-links-small">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <div class="footer-col">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">WORKS</a>
+        <a href="#">TESTIMONIALS</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>CLIENTS</span></a>
+        <a href="#">NIYAAZ</a>
+        <a href="#">AMD</a>
+        <a href="#">GALANGAL</a>
+        <a href="#">NAVIEO</a>
+      </div>
+
+      <div class="footer-col">
+        <a href="#"><span>SERVICES</span></a>
+        <a href="#">CASE STUDY</a>
+        <a href="#">REELS</a>
+        <a href="#">BRANDING</a>
+        <a href="#">SOCIAL MEDIA</a>
+        <a href="#">PACKAGING</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 Agency Social Santa. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  // Toggle menu on dots click
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    menuDropdown.style.display =
+      menuDropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Prevent closing when clicking inside menu
+  menuDropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menuDropdown.style.display = "none";
+  });
+</script>
+    
+</body>
+</html>
